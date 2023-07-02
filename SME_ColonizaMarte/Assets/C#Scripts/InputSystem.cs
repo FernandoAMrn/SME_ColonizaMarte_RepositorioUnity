@@ -17,6 +17,9 @@ public class InputSystem : MonoBehaviour
     public Vector3 zoomAmount;
     public Vector3 newZoom;
 
+    public Vector3 dragStartPosition;
+    public Vector3 dragCurrentPosition;
+
     private void Start()
     {
         newPosition = transform.position; //Mantiene la posicion de la camara cuando se empieza el juego
@@ -25,9 +28,47 @@ public class InputSystem : MonoBehaviour
 
     private void Update()
     {
+        HandleMouseInput();
         CameraMovementInput();
     }
 
+    void HandleMouseInput()
+    {
+
+        if(Input.mouseScrollDelta.y != 0)
+        {
+            newZoom += Input.mouseScrollDelta.y * zoomAmount;
+        }
+        if(Input.GetMouseButtonDown(0))
+        {
+            Plane plane = new Plane(Vector3.up, Vector3.zero);
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            float entry;
+
+            if(plane.Raycast(ray, out entry))
+            {
+                dragStartPosition = ray.GetPoint(entry);
+            }
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            Plane plane = new Plane(Vector3.up, Vector3.zero);
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            float entry;
+
+            if (plane.Raycast(ray, out entry))
+            {
+                dragCurrentPosition = ray.GetPoint(entry);
+
+                newPosition = transform.position + dragStartPosition - dragCurrentPosition;
+            }
+        }
+    }
     void CameraMovementInput()  // Controles para la Camara
     {
         // Velocidades de movimiento de la camara
