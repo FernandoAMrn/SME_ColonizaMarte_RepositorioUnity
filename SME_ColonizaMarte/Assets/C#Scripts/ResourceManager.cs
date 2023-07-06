@@ -6,47 +6,78 @@ public class ResourceManager : MonoBehaviour
 {
     [Header("Resources")]
 
-    [Space(10)]
+    [Space(8)]
 
+    //Variables de personas
     public int maxPeople;
     int people = 0;
 
+    //Variables de comida
     public int maxFood;
     int food = 0;
 
+    //Variables de energia
     public int maxEnergy;
     int energy = 0;
 
+
+    //SINGLETON
     public static ResourceManager Instance;
 
     private void Awake()
     {
-        //Inicializo Singleton
-        Instance = this;
+      Instance = this; //Inicializa Singleton
+    }
+
+    public bool debugBool = false;
+
+    /// <summary>
+    /// Añade más recurso de personas al inventario
+    /// </summary>
+    /// <param name="amount"></param>
+    public void AddPeople(int amount)
+    {
+        people += amount;
+
+        // TODO: Actualiza la UI de personas 
     }
 
     /// <summary>
-    /// Add more food to inventory
+    /// Añade más recurso de comida al inventario
     /// </summary>
     /// <param name="amount"></param>
     public void AddFood(int amount)
     {
-        people += amount;
+        food += amount;
 
-        //Updates the food UI
-        UI_Manager.Instance.UpdateFoodUI(food, maxFood);
+        // TODO: Actualiza la UI de comida 
     }
 
     /// <summary>
-    /// Add more food to inventory
+    /// Añade más recurso de energia al inventario
     /// </summary>
     /// <param name="amount"></param>
-    public void AddEnergy(int amount)
+    public void AddEenrgy(int amount)
     {
         energy += amount;
 
-        //Updates the energy UI
-        UI_Manager.Instance.UpdateEnergydUI(energy, maxEnergy);
+        // TODO: Actualiza la UI de energia 
     }
 
+
+    private void Update()
+    {
+        if (debugBool)
+        {
+            printCurrentResources();
+            debugBool = false;
+        }
+    }
+
+    void printCurrentResources()
+    {
+        Debug.Log("personas" + people);
+        Debug.Log("comida" + food);
+        Debug.Log("energia" + energy);
+    }
 }

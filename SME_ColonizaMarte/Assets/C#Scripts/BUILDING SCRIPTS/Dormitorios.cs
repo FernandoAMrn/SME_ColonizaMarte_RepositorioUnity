@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Dormitorios : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+   public void recolectaPersonas()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ResourceManager.Instance.AddPeople(10);
     }
 }
