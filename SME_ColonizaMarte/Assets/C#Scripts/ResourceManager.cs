@@ -31,16 +31,20 @@ public class ResourceManager : MonoBehaviour
 
     public bool debugBool = false;
 
+    public int People { get => people; set => people = value; }
+    public int Food { get => food; set => food = value; }
+    public int Energy { get => energy; set => energy = value; }
+
     /// <summary>
     /// Añade más recurso de personas al inventario
     /// </summary>
     /// <param name="amount"></param>
     public void AddPeople(int amount)
     {
-        people += amount;
+        People += amount;
 
         // Actualiza la UI de personas 
-        UIManager.Instance.updatePeopleUI(people, maxPeople);
+        UIManager.Instance.updatePeopleUI(People, maxPeople);
     }
 
     /// <summary>
@@ -49,10 +53,10 @@ public class ResourceManager : MonoBehaviour
     /// <param name="amount"></param>
     public void AddFood(int amount)
     {
-        food += amount;
+        Food += amount;
 
         //  Actualiza la UI de comida 
-        UIManager.Instance.updatefoodUI(food, maxFood);
+        UIManager.Instance.updatefoodUI(Food, maxFood);
     }
 
     /// <summary>
@@ -61,10 +65,10 @@ public class ResourceManager : MonoBehaviour
     /// <param name="amount"></param>
     public void AddEenrgy(int amount)
     {
-        energy += amount;
+        Energy += amount;
 
         //  Actualiza la UI de energia
-        UIManager.Instance.updateEnergyUI(energy, maxEnergy);
+        UIManager.Instance.updateEnergyUI(Energy, maxEnergy);
     }
 
 
@@ -79,8 +83,8 @@ public class ResourceManager : MonoBehaviour
 
     void printCurrentResources()
     {
-        Debug.Log("personas" + people);
-        Debug.Log("comida" + food);
-        Debug.Log("energia" + energy);
+        Debug.Log("personas" + People);
+        Debug.Log("comida" + Food);
+        Debug.Log("energia" + Energy);
     }
 }

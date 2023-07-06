@@ -32,8 +32,8 @@ public class UIManager : MonoBehaviour
     public void updatePeopleUI(int currentAmount,  int maxAmount)
     {
         //Setea el texto en el UI
-        peopleUI.currentUI.text = currentAmount.ToString();
-        peopleUI.maxUI.text = maxAmount.ToString();
+        peopleUI.currentUI.text =  currentAmount.ToString();
+        peopleUI.maxUI.text = "MAX" + maxAmount.ToString();
 
         //Setea el slider  en el UI
         peopleUI.slider.maxValue = maxAmount;
@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
     {
         //Setea el texto en el UI
         foodUI.currentUI.text = currentAmount.ToString();
-        foodUI.maxUI.text = maxAmount.ToString();
+        foodUI.maxUI.text = "MAX" + maxAmount.ToString();
 
         //Setea el slider  en el UI
         foodUI.slider.maxValue = maxAmount;
@@ -65,11 +65,22 @@ public class UIManager : MonoBehaviour
     {
         //Setea el texto en el UI
         energyUI.currentUI.text = currentAmount.ToString();
-        energyUI.maxUI.text = maxAmount.ToString();
+        energyUI.maxUI.text = "MAX" + maxAmount.ToString();
 
         //Setea el slider  en el UI
         energyUI.slider.maxValue = maxAmount;
         energyUI.slider.value = currentAmount;
+    }
+
+    void UpdateAllUI()
+    {
+        updatePeopleUI(ResourceManager.Instance.People, ResourceManager.Instance.maxPeople);
+        updatePeopleUI(ResourceManager.Instance.Food, ResourceManager.Instance.maxFood);
+        updatePeopleUI(ResourceManager.Instance.Energy, ResourceManager.Instance.maxEnergy);
+
+        /* AQUI ME QUEDE
+         * 
+         * MIN 25:42 */
     }
 
     //Clase para referencias de UI
