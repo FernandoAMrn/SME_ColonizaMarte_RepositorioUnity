@@ -26,7 +26,7 @@ public class ResourceManager : MonoBehaviour
 
     private void Awake()
     {
-      Instance = this; //Inicializa Singleton
+        Instance = this; //Inicializa Singleton
     }
 
     public bool debugBool = false;
@@ -39,7 +39,8 @@ public class ResourceManager : MonoBehaviour
     {
         people += amount;
 
-        // TODO: Actualiza la UI de personas 
+        // Actualiza la UI de personas 
+        UIManager.Instance.updatePeopleUI(people, maxPeople);
     }
 
     /// <summary>
@@ -50,7 +51,8 @@ public class ResourceManager : MonoBehaviour
     {
         food += amount;
 
-        // TODO: Actualiza la UI de comida 
+        //  Actualiza la UI de comida 
+        UIManager.Instance.updatefoodUI(food, maxFood);
     }
 
     /// <summary>
@@ -61,7 +63,8 @@ public class ResourceManager : MonoBehaviour
     {
         energy += amount;
 
-        // TODO: Actualiza la UI de energia 
+        //  Actualiza la UI de energia
+        UIManager.Instance.updateEnergyUI(energy, maxEnergy);
     }
 
 
