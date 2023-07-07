@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class RTorre : MonoBehaviour
 {
-    public Vector3 rotation;
-
-
+    public float rSpeed;
+    private float totalRot = 0f;
     //Update is called once per frame
     void Update()
     {
-        transform.Rotate(rotation * Time.deltaTime);
-        this.transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        if (totalRot <15)
+        {
+            float rotationAmount = -rSpeed * Time.deltaTime;
+            transform.Rotate(rotationAmount, 0f, 0f);
+            totalRot += Mathf.Abs(rotationAmount);
+        }
     }
 }
