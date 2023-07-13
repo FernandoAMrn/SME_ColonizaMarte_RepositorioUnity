@@ -10,15 +10,15 @@ public class ResourceManager : MonoBehaviour
 
     //Variables de personas
     public int maxPeople;
-    int people = 0;
+    public static int people = 0;
 
     //Variables de comida
     public int maxFood;
-    int food = 0;
+    public static int food = 0;
 
     //Variables de energia
     public int maxEnergy;
-    int energy = 0;
+    public static int energy = 0;
 
 
     //SINGLETON
@@ -54,9 +54,9 @@ public class ResourceManager : MonoBehaviour
     public void AddFood(int amount)
     {
         Food += amount;
-
+        Debug.Log("Added Food");
         //  Actualiza la UI de comida 
-        UIManager.Instance.updatefoodUI(Food, maxFood);
+        UIManager.Instance.updateFoodUI(Food, maxFood);
     }
 
     /// <summary>
@@ -66,7 +66,7 @@ public class ResourceManager : MonoBehaviour
     public void AddEenrgy(int amount)
     {
         Energy += amount;
-
+        Debug.Log("Added energy");
         //  Actualiza la UI de energia
         UIManager.Instance.updateEnergyUI(Energy, maxEnergy);
     }

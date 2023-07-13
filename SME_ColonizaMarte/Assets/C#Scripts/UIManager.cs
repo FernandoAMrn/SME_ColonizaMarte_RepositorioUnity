@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     /// <param name="currentAmount">sete el valora ctual del slider y texto</param>
     /// <param name="maxAmount">setea el valor maximo del slider y texto</param>
-    public void updatefoodUI(int currentAmount, int maxAmount)
+    public void updateFoodUI(int currentAmount, int maxAmount)
     {
         //Setea el texto en el UI
         foodUI.currentUI.text = currentAmount.ToString();
@@ -75,8 +75,8 @@ public class UIManager : MonoBehaviour
     void UpdateAllUI()
     {
         updatePeopleUI(ResourceManager.Instance.People, ResourceManager.Instance.maxPeople);
-        updatePeopleUI(ResourceManager.Instance.Food, ResourceManager.Instance.maxFood);
-        updatePeopleUI(ResourceManager.Instance.Energy, ResourceManager.Instance.maxEnergy);
+        updateFoodUI(ResourceManager.Instance.Food, ResourceManager.Instance.maxFood);
+        updateEnergyUI(ManagerRecursos.energy, ManagerRecursos.maxEnergy);
 
         /* AQUI ME QUEDE
          * 

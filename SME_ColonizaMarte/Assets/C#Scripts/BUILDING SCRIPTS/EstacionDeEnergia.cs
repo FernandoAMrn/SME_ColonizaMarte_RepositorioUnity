@@ -4,8 +4,23 @@ using UnityEngine;
 
 public class EstacionDeEnergia : MonoBehaviour
 {
-     public void recolectaEnergia()
+    //public void recolectaEnergia()
+    //{
+    //    ResourceManager.Instance.AddEenrgy(10);
+    //}
+
+
+    private void Start()
     {
-        ResourceManager.Instance.AddEenrgy(10);
+        StartCoroutine(energyGen());
+    }
+
+
+    IEnumerator energyGen()
+    {
+        yield return new WaitForSeconds(2);
+        ManagerRecursos.energy += 10;
+        StartCoroutine(energyGen());
+
     }
 }
