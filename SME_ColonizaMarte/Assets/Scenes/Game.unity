@@ -3922,8 +3922,6 @@ GameObject:
   m_Component:
   - component: {fileID: 530367263}
   - component: {fileID: 530367265}
-  - component: {fileID: 530367266}
-  - component: {fileID: 530367267}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3958,42 +3956,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3696a039abf64e40ae71ee29badb93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &530367266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530367262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f47f745a199a3fd4ea0687cb126faabc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peopleUI:
-    slider: {fileID: 2140294732}
-    maxUI: {fileID: 855300885}
-    currentUI: {fileID: 878826906}
-  foodUI:
-    slider: {fileID: 1442104697}
-    maxUI: {fileID: 435201833}
-    currentUI: {fileID: 1454125590}
-  energyUI:
-    slider: {fileID: 653675120}
-    maxUI: {fileID: 534418042}
-    currentUI: {fileID: 2877459}
---- !u!114 &530367267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530367262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fde102777e68a494f8abedb0eb036185, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  PeopleSlider: {fileID: 2140294732}
+  PeopleMaxUI: {fileID: 855300885}
+  PeopleCurrentUI: {fileID: 878826906}
+  currentPeopleAmount: 0
+  maxPeopleAmount: 200
+  FoodSlider: {fileID: 1442104697}
+  FoodMaxUI: {fileID: 435201833}
+  FoodCurrentUI: {fileID: 1454125590}
+  currentFoodAmount: 0
+  maxFoodAmount: 200
+  EnergySlider: {fileID: 653675120}
+  EnergyMaxUI: {fileID: 534418042}
+  EnergyCurrentUI: {fileID: 2877459}
+  currentEnergyAmount: 0
+  maxEnergyAmount: 200
 --- !u!1 &534418040
 GameObject:
   m_ObjectHideFlags: 0

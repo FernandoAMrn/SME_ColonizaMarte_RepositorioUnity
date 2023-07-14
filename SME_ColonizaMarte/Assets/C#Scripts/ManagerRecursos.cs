@@ -14,9 +14,7 @@ public class ManagerRecursos : MonoBehaviour
     public static int maxEnergy = 200;
     public static int energy = 0;
 
-    public int People { get => people; set => people = value; }
-    public int Food { get => food; set => food = value; }
-    public int Energy { get => energy; set => energy = value; }
+    
 
     private void Update()
     {
