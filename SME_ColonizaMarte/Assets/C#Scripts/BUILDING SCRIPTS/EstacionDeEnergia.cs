@@ -18,7 +18,7 @@ public class EstacionDeEnergia : MonoBehaviour
 
     IEnumerator energyGen()
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(2);
         //ManagerRecursos.energy += 10;
         GameManager.Instance.AddEnergy(10);
         StartCoroutine(energyGen());
