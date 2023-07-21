@@ -6,6 +6,15 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Component")]
+    public TextMeshProUGUI timerText;
+    [Header("TimerSettings")]
+    public float currentTime;
+    [Header("Limit Setting")]
+    public float timerLimit;
+    public GameObject defeatPanel;
+
+
     public static int maxPeople = 200;
     public static int people = 0;
 
@@ -85,5 +94,33 @@ public class GameManager : MonoBehaviour
         updateEnergyUI(energy, maxEnergy);
     }
 
+    public void AddFood(int amount)
+    {
+        food += amount;
+        updateFoodUI(food, maxFood);
+    }
+
+    public void Update()
+    {
+        currentTime = currentTime -= Time.deltaTime;
+
+        if (currentTime <= timerLimit)
+        {
+            currentTime = timerLimit;
+            SetTimerText();
+            timerText.color = Color.red;
+            enabled = false;
+            
+            
+        }
+        SetTimerText();
+
+        
+    }
+
+    private void SetTimerText()
+    {
+        timerText.text = currentTime.ToString("0");
+    }
 
 }

@@ -7,8 +7,17 @@ public class Invernadero : MonoBehaviour
     /// <summary>
     /// El INVERNADERO DA 10 RECURSOS DE COMIDA CADA 30 SEGUNDOS
     /// </summary>
-   public void recolectComida()
+    /// 
+
+    private void Start()
     {
-        ResourceManager.Instance.AddFood(10);
+        StartCoroutine(recolectComida());
+    }
+    IEnumerator recolectComida()
+    {
+        yield return new WaitForSeconds(2);
+
+        GameManager.Instance.AddFood(10);
+        StartCoroutine(recolectComida());
     }
 }
