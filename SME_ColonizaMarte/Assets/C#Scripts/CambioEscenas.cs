@@ -4,6 +4,12 @@ using UnityEngine.SceneManagement;
 public class CambioEscenas : MonoBehaviour
 {
 
+    public void Menu()
+    {
+        //Carga el juego.
+        SceneManager.LoadScene(0);
+
+    }
     public void Iniciar()
     {
         //Carga el juego.
