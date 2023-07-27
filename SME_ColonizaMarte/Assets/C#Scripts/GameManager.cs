@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    //INTERFAZ DE USUARIO
+    #region
     public void updatePeopleUI(int currentPeopleAmount, int maxPeopleAmount)
     {
         PeopleCurrentUI.text = currentPeopleAmount.ToString();
@@ -87,7 +89,10 @@ public class GameManager : MonoBehaviour
         EnergySlider.maxValue = maxAmount;
         EnergySlider.value = currentEnergyAmount;
     }
+    #endregion
 
+    //GENERA RECURSOS
+    #region
     public void AddEnergy(int amount)
     {
         energy += amount;
@@ -100,6 +105,14 @@ public class GameManager : MonoBehaviour
         updateFoodUI(food, maxFood);
     }
 
+    public void AddPeople(int amount)
+    {
+        people += amount;
+        updatePeopleUI(people, maxPeople); 
+    }
+    #endregion
+
+    //TIMER DE NAVE CON RECURSOS
     public void Update()
     {
         currentTime = currentTime -= Time.deltaTime;
@@ -122,5 +135,7 @@ public class GameManager : MonoBehaviour
     {
         timerText.text = currentTime.ToString("0");
     }
+
+
 
 }

@@ -5,8 +5,15 @@ using UnityEngine;
 public class Dormitorios : MonoBehaviour
 {
     // Start is called before the first frame update
-   public void recolectaPersonas()
+    private void Start()
     {
-        ResourceManager.Instance.AddPeople(10);
+        StartCoroutine(PeopleGen());
+    }
+
+    IEnumerator PeopleGen()
+    {
+        yield return new WaitForSeconds(1200);
+        GameManager.Instance.AddPeople(20);
+        StartCoroutine(PeopleGen());
     }
 }
