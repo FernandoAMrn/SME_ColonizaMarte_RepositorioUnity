@@ -18,6 +18,6 @@ public class ManagerRecursos : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(energy + " " + food);
+        //Debug.Log(energy + " " + food);
     }
 }
