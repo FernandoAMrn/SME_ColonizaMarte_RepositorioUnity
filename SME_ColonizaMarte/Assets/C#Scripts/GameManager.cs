@@ -127,8 +127,6 @@ public class GameManager : MonoBehaviour
             
         }
         SetTimerText();
-
-        
     }
 
     private void SetTimerText()
@@ -136,6 +134,9 @@ public class GameManager : MonoBehaviour
         timerText.text = currentTime.ToString("0");
     }
 
+    //Instanceamineto de edificios
+
+    
 
 
 }
