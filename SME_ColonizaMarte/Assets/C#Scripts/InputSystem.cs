@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputSystem : MonoBehaviour
 {
+    //MOVEMENT FIELDS
     public Transform cameraTransform;
 
     public float cameraMovementSpeed;
@@ -19,7 +20,11 @@ public class InputSystem : MonoBehaviour
 
     public Vector3 dragStartPosition;
     public Vector3 dragCurrentPosition;
+    //End MOVEMENT FIELDS
 
+
+  
+    #region Input para movimiento de la camara
     private void Start()
     {
         newPosition = transform.position; //Mantiene la posicion de la camara cuando se empieza el juego
@@ -111,4 +116,9 @@ public class InputSystem : MonoBehaviour
         }
         
     }
+    #endregion
+
+
+
+
 }

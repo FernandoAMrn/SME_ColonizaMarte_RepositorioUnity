@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3723556161142616636}
   - component: {fileID: 7925982493328236313}
   - component: {fileID: 4729686818830314982}
-  - component: {fileID: 4451594831251682721}
   m_Layer: 0
   m_Name: EstacionDeEnergia_Prefab
   m_TagString: Untagged
@@ -59,20 +58,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 23.796642, y: 7.8464575, z: 22.306925}
-  m_Center: {x: 0, y: 5.477883, z: -0.88009167}
---- !u!114 &4451594831251682721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3723556161142616639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e45e8cedeac4f4abd8b70cf5ff0d5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Size: {x: 23.796642, y: 9.481941, z: 22.306925}
+  m_Center: {x: 0, y: 4.660141, z: -0.88009167}
 --- !u!1001 &3723556160502971474
 PrefabInstance:
   m_ObjectHideFlags: 0
