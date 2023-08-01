@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3723556161142616636}
   - component: {fileID: 7925982493328236313}
+  - component: {fileID: 4729686818830314982}
   m_Layer: 0
   m_Name: EstacionDeEnergia_Prefab
   m_TagString: Untagged
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3279ba91b6ddb4385d7192bee8c791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4729686818830314982
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723556161142616639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.796642, y: 9.901112, z: 22.306925}
+  m_Center: {x: 0, y: 4.450556, z: -0.88009167}
 --- !u!1001 &3723556160502971474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,12 +76,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6dd5966d50a134d49a2e7a1c0e241da7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6dd5966d50a134d49a2e7a1c0e241da7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6dd5966d50a134d49a2e7a1c0e241da7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6dd5966d50a134d49a2e7a1c0e241da7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6dd5966d50a134d49a2e7a1c0e241da7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -63.5
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6dd5966d50a134d49a2e7a1c0e241da7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -100,6 +126,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6dd5966d50a134d49a2e7a1c0e241da7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6dd5966d50a134d49a2e7a1c0e241da7, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6617609266087871962, guid: 6dd5966d50a134d49a2e7a1c0e241da7, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -140,12 +170,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.067657195
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
       propertyPath: m_LocalPosition.z
@@ -177,6 +219,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2859109400176981367, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}

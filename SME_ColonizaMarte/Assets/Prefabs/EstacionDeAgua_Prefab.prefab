@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3525531562820214478}
+  - component: {fileID: 84044530038869491}
   m_Layer: 0
   m_Name: EstacionDeAgua_Prefab
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &84044530038869491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525531562820214465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.827003, y: 12.8892765, z: 24.19785}
+  m_Center: {x: 0, y: 5.9446383, z: 0}
 --- !u!1001 &3525531561582428540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45,12 +59,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
       propertyPath: m_LocalPosition.z
@@ -84,6 +110,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2859109400176981367, guid: 7bbd6ca519cb0b641b526a160e206c13, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -116,15 +146,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77cc66667caae8c47b8d483df803116d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75251
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77cc66667caae8c47b8d483df803116d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75251
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77cc66667caae8c47b8d483df803116d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.75251
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77cc66667caae8c47b8d483df803116d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -132,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77cc66667caae8c47b8d483df803116d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -40.7
+      value: -6.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77cc66667caae8c47b8d483df803116d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -165,6 +195,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 77cc66667caae8c47b8d483df803116d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 77cc66667caae8c47b8d483df803116d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6829207702912181163, guid: 77cc66667caae8c47b8d483df803116d, type: 3}
       propertyPath: m_Materials.Array.data[0]
