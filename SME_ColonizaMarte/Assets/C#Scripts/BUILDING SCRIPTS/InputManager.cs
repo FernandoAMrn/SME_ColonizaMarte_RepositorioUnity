@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
@@ -13,6 +15,21 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private LayerMask placementLayerMask;
     //End GRID FIELDS
+
+    //Prefabs fields
+    public event Action OnClicked, OnExit;
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+            OnClicked?.Invoke(); //Aqui puedo codear para activar desde boton
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            OnExit?.Invoke(); //Aqui puedo codear para activar desde boton
+    }
+
+    public bool IspointerOverUI()
+    => EventSystem.current.IsPointerOverGameObject();
+
 
     public Vector3 GetSelectedMapPosition()
     {
