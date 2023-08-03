@@ -1,38 +1,46 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class CanvasPanels : MonoBehaviour
 {
+    [SerializeField] private GameObject canvasMain;
+
     [SerializeField] private GameObject botonPausa;
-    [SerializeField] private GameObject menuPausa;
+    [SerializeField] private GameObject canvasPausa;
 
     [SerializeField] private GameObject botonAudio;
-    [SerializeField] private GameObject menuAudio;
+    [SerializeField] private GameObject canvasAudio;
 
     [SerializeField] private GameObject botonCreditos;
-    [SerializeField] private GameObject menuCreditos;
+    [SerializeField] private GameObject canvasCreditos;
+
+    [SerializeField] private GameObject botonAlonso;
+    [SerializeField] private GameObject canvasAlonso;
     public void Pause()
     {
         Time.timeScale = 0f;
         botonPausa.SetActive(false);
-        menuPausa.SetActive(true);
+        canvasPausa.SetActive(true);
     }
     public void Audio()
     {
         Time.timeScale = 0f;
         botonAudio.SetActive(false);
-        menuAudio.SetActive(true);
+        canvasAudio.SetActive(true);
     }
     public void Creditos()
     {
         Time.timeScale = 0f;
-        botonCreditos.SetActive(false);
-        menuCreditos.SetActive(true);
+        canvasMain.SetActive(false);
+        //botonCreditos.SetActive(false);
+        canvasCreditos.SetActive(true);
     }
+    
     public void Reanudar()
     {
         Time.timeScale = 1f;
         botonPausa.SetActive(true);
-        menuPausa.SetActive(false);
+        canvasPausa.SetActive(false);
     }
     public void Reiniciar()
     {
@@ -46,12 +54,26 @@ public class CanvasPanels : MonoBehaviour
     }
     public void CerrarPanelAudio()
     {
-        menuAudio.SetActive(false);
+        Time.timeScale = 1f;
+        canvasAudio.SetActive(false);
         botonAudio.SetActive(true);
     }
     public void CerrarPanelCreditos()
     {
-        menuCreditos.SetActive(false);
-        botonCreditos.SetActive(true);
+        Time.timeScale = 1f;
+        canvasCreditos.SetActive(false);
+        canvasMain.SetActive(true);
+        //botonCreditos.SetActive(true);
+    }
+
+    public void Alonso()
+    {
+        botonCreditos.SetActive(false);
+        canvasCreditos.SetActive(true);
+    }
+    public void CerrarPanelAlonso()
+    {
+        botonAlonso.SetActive(false);
+        canvasAlonso.SetActive(true);
     }
 }
