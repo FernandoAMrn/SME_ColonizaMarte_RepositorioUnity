@@ -955,6 +955,7 @@ GameObject:
   - component: {fileID: 327415202}
   - component: {fileID: 327415201}
   - component: {fileID: 327415200}
+  - component: {fileID: 327415203}
   m_Layer: 5
   m_Name: EstacionDeAgua_Bttn
   m_TagString: Untagged
@@ -1025,7 +1026,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 327415201}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1408811077}
+        m_TargetAssemblyTypeName: PlacementSystem, Assembly-CSharp
+        m_MethodName: StartPlacementAgua
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &327415201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,6 +1077,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327415198}
   m_CullTransparentMesh: 1
+--- !u!114 &327415203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327415198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27af2062891ebe34e840ec12b79215bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InfoPanel: {fileID: 47211145}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1736,7 @@ GameObject:
   - component: {fileID: 527445647}
   - component: {fileID: 527445646}
   - component: {fileID: 527445645}
+  - component: {fileID: 527445648}
   m_Layer: 5
   m_Name: Inverandero_Bttn
   m_TagString: Untagged
@@ -1780,7 +1807,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 527445646}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1408811077}
+        m_TargetAssemblyTypeName: PlacementSystem, Assembly-CSharp
+        m_MethodName: StartPlacementInvernadero
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &527445646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1819,6 +1858,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527445643}
   m_CullTransparentMesh: 1
+--- !u!114 &527445648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527445643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27af2062891ebe34e840ec12b79215bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InfoPanel: {fileID: 1765741425}
 --- !u!1001 &557131189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2318,6 +2370,7 @@ GameObject:
   - component: {fileID: 710580545}
   - component: {fileID: 710580544}
   - component: {fileID: 710580543}
+  - component: {fileID: 710580546}
   m_Layer: 5
   m_Name: EstacionDeEnergia_Bttn
   m_TagString: Untagged
@@ -2388,7 +2441,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 710580544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1408811077}
+        m_TargetAssemblyTypeName: PlacementSystem, Assembly-CSharp
+        m_MethodName: StartPlacementEnergia
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &710580544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2427,6 +2492,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710580541}
   m_CullTransparentMesh: 1
+--- !u!114 &710580546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710580541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27af2062891ebe34e840ec12b79215bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InfoPanel: {fileID: 1595488544}
 --- !u!1 &720489279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,7 +2591,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1408811077}
         m_TargetAssemblyTypeName: PlacementSystem, Assembly-CSharp
-        m_MethodName: StartPlacement
+        m_MethodName: StartPlacementDormitorio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3439,6 +3517,7 @@ GameObject:
   - component: {fileID: 1006413421}
   - component: {fileID: 1006413420}
   - component: {fileID: 1006413419}
+  - component: {fileID: 1006413422}
   m_Layer: 5
   m_Name: Rover_Bttn
   m_TagString: Untagged
@@ -3548,6 +3627,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006413417}
   m_CullTransparentMesh: 1
+--- !u!114 &1006413422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006413417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27af2062891ebe34e840ec12b79215bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InfoPanel: {fileID: 619504900}
 --- !u!1 &1043894459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,6 +3696,7 @@ GameObject:
   - component: {fileID: 1158763358}
   - component: {fileID: 1158763357}
   - component: {fileID: 1158763356}
+  - component: {fileID: 1158763359}
   m_Layer: 5
   m_Name: Laboratorio_Bttn
   m_TagString: Untagged
@@ -3674,7 +3767,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1158763357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1408811077}
+        m_TargetAssemblyTypeName: PlacementSystem, Assembly-CSharp
+        m_MethodName: StartPlacementLaboratorio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1158763357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3713,6 +3818,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158763354}
   m_CullTransparentMesh: 1
+--- !u!114 &1158763359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158763354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27af2062891ebe34e840ec12b79215bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InfoPanel: {fileID: 631840530}
 --- !u!1 &1160247927
 GameObject:
   m_ObjectHideFlags: 0
@@ -4028,6 +4146,7 @@ GameObject:
   - component: {fileID: 1236427111}
   - component: {fileID: 1236427110}
   - component: {fileID: 1236427109}
+  - component: {fileID: 1236427112}
   m_Layer: 5
   m_Name: Taller_Bttn
   m_TagString: Untagged
@@ -4098,7 +4217,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1236427110}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1408811077}
+        m_TargetAssemblyTypeName: PlacementSystem, Assembly-CSharp
+        m_MethodName: StartPlacementTaller
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1236427110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4137,6 +4268,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236427107}
   m_CullTransparentMesh: 1
+--- !u!114 &1236427112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236427107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27af2062891ebe34e840ec12b79215bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InfoPanel: {fileID: 862969958}
 --- !u!1 &1246175189
 GameObject:
   m_ObjectHideFlags: 0
@@ -4636,6 +4780,11 @@ MonoBehaviour:
   inputManager: {fileID: 1385170199}
   grid: {fileID: 1043894461}
   dormitorios: {fileID: 3849391532018219151, guid: ab1fb23ad688d18438a5f7f50c9f921d, type: 3}
+  EstacionDeAgua: {fileID: 3525531562820214465, guid: 8df20eb49f1242f4297928696e253f89, type: 3}
+  EstacionDeEnergia: {fileID: 3723556161142616639, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+  Invernadero: {fileID: 5941210836856054295, guid: a845740840b826147ac1cc1750fada15, type: 3}
+  Laboratorio: {fileID: 5402912645940492111, guid: 703436d5ff1f80842993d4fe7052bfca, type: 3}
+  Taller: {fileID: 7826791912613770825, guid: 256584e291720cc4fb8702aa6d5fb02b, type: 3}
   gridVisualization: {fileID: 710395901}
 --- !u!1 &1418351421
 GameObject:
