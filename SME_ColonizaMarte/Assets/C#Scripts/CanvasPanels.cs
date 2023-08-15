@@ -71,9 +71,9 @@ public class CanvasPanels : MonoBehaviour
         botonCreditos.SetActive(false);
         canvasCreditos.SetActive(true);
     }
-    public void CerrarPanelAlonso()
-    {
-        botonAlonso.SetActive(false);
-        canvasAlonso.SetActive(true);
-    }
+    //public void CerrarPanelAlonso()
+    //{
+    //    botonAlonso.SetActive(false);
+    //    canvasAlonso.SetActive(true);
+    //}
 }
