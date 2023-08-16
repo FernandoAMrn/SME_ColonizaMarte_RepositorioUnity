@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Invernadero : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class Invernadero : MonoBehaviour
     /// </summary>
     /// 
 
+    
+
     private void Start()
     {
         StartCoroutine(recolectComida());
+        
     }
     IEnumerator recolectComida()
     {
@@ -20,4 +24,6 @@ public class Invernadero : MonoBehaviour
         GameManager.Instance.AddFood(10);
         StartCoroutine(recolectComida());
     }
+
+    
 }

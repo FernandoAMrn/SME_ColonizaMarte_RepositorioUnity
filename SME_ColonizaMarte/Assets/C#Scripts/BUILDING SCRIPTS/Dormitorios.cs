@@ -1,27 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CodeMonkey.Utils;
+using UnityEngine.UI;
+
 
 public class Dormitorios : MonoBehaviour
 {
-    
-    private World_Bar constructingWorldBar;
-    private int buildTick;
-    private int buildTickMax;
+    public Image timer_linear_image;
+    float timeRemaining;
+    public float maxTime = 20.0f;
     private bool isConstruccting;
 
     // Start is called before the first frame update
-    private void Start( int ticksToConstruct)
+    private void Start()
     {
+        timeRemaining = maxTime;
         StartCoroutine(PeopleGen());
-
-        buildTick = 0;
-        buildTickMax = ticksToConstruct;
-        isConstruccting = true;
-
-
-        constructingWorldBar = new World_Bar(gameObject.transform, new Vector3(0, 1f), new Vector3(2, 1), Color.grey, Color.yellow, .0f, -10, new World_Bar.Outline() { color = Color.black, size = .01f });
+        
     }
 
     
@@ -33,22 +28,13 @@ public class Dormitorios : MonoBehaviour
         StartCoroutine(PeopleGen());
     }
 
-    private void BuildingTimeSystem_Onclick(object sender, BuildingTimeSystem.OnTickEventArgs e)
+    void Update()
     {
-        if (isConstruccting)
+        if (timeRemaining > 0)
         {
-            buildTick += 1;
-            if (buildTick >= buildTickMax)
-            {
-                //Building is Fully Constructed
-                isConstruccting = false;
-                constructingWorldBar.Hide();
-            }
-            else
-            {
-                //Building is still construccting
-                constructingWorldBar.SetSize(buildTick * 1f / buildTickMax);
-            }
+            timeRemaining -= Time.deltaTime;
+            timer_linear_image.fillAmount = timeRemaining / maxTime;
         }
     }
+
 }

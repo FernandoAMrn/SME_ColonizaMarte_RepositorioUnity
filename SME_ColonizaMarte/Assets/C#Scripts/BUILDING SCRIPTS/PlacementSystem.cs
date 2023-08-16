@@ -40,10 +40,7 @@ public class PlacementSystem : MonoBehaviour
         StopPlacementInverandero();
         StopPlacementLaboratorio();
         StopPlacementTaller();
-        BuildingTimeSystem.OnTick += delegate (object sender, BuildingTimeSystem.OnTickEventArgs e )
-        {
-            CMDebug.TextPopupMouse("tick:" + e.tick);
-        };
+        
     }
 
     //Modos de Construccion
