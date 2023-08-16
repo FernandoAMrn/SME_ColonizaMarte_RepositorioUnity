@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,35 +7,41 @@ using UnityEngine.UI;
 
 public class Dormitorios : MonoBehaviour
 {
-    public Image timer_linear_image;
-    float timeRemaining;
-    public float maxTime = 20.0f;
-    private bool isConstruccting;
+    public Slider timerSlider;
 
-    // Start is called before the first frame update
+    public float sliderTimer;
+
+    public bool stopTimer = false;
+
+
     private void Start()
     {
-        timeRemaining = maxTime;
-        StartCoroutine(PeopleGen());
+        timerSlider.maxValue = sliderTimer;
+        timerSlider.value = sliderTimer;
+        StartTimer();
+    }
+
+    public void StartTimer()
+    {
+        StartCoroutine(StarTheTimerTicker());
+    }
+
+    IEnumerator StarTheTimerTicker()
+    {
+        while (stopTimer == false)
+        {
+            sliderTimer -= Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if (sliderTimer <= 0)
+            {
+                stopTimer = true;
+            }
+            if (stopTimer == false)
+            {
+                timerSlider.value = sliderTimer;
+            }
+        }
         
     }
-
-    
-
-    IEnumerator PeopleGen()
-    {
-        yield return new WaitForSeconds(1200);
-        GameManager.Instance.AddPeople(20);
-        StartCoroutine(PeopleGen());
-    }
-
-    void Update()
-    {
-        if (timeRemaining > 0)
-        {
-            timeRemaining -= Time.deltaTime;
-            timer_linear_image.fillAmount = timeRemaining / maxTime;
-        }
-    }
-
 }

@@ -29,17 +29,22 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     private GameObject Taller;
 
+    
+
     [SerializeField]
     private GameObject gridVisualization;
 
     private void Start()
     {
+
         StopPlacementDormitorio();
         StopPlacementAgua();
         StopPlacementEnergia();
         StopPlacementInverandero();
         StopPlacementLaboratorio();
         StopPlacementTaller();
+
+        
         
     }
 
@@ -115,6 +120,7 @@ public class PlacementSystem : MonoBehaviour
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
         GameObject newDormitorios = Instantiate(dormitorios);
         newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+       
     }
 
     private void PlaceStructureAgua()
