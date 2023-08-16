@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerSlider: {fileID: 3611678297004664639}
+  SliderParaOcultar: {fileID: 8041815654653174488}
   sliderTimer: 10
   stopTimer: 0
 --- !u!1 &4461210861453973995

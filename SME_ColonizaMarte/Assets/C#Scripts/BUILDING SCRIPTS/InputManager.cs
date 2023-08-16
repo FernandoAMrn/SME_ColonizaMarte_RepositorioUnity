@@ -43,4 +43,9 @@ public class InputManager : MonoBehaviour
         }
         return lastPosition;
     }
+
+    public void TerminaModoConstruccion()
+    {
+        OnExit?.Invoke();
+    }
 }

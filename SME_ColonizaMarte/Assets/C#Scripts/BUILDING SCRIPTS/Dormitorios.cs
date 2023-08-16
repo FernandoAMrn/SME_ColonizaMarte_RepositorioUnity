@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using CodeMonkey;
+using CodeMonkey.MonoBehaviours;
+using CodeMonkey.Utils;
 
 
 public class Dormitorios : MonoBehaviour
 {
     public Slider timerSlider;
+    public GameObject SliderParaOcultar;
 
     public float sliderTimer;
 
@@ -23,7 +27,7 @@ public class Dormitorios : MonoBehaviour
 
     public void StartTimer()
     {
-        StartCoroutine(StarTheTimerTicker());
+        StartCoroutine(StarTheTimerTicker()); //Inicializacion de Corutina del timer
     }
 
     IEnumerator StarTheTimerTicker()
@@ -35,13 +39,24 @@ public class Dormitorios : MonoBehaviour
 
             if (sliderTimer <= 0)
             {
-                stopTimer = true;
+                stopTimer = true; //Timer is over
+                SliderParaOcultar.SetActive(false);
+                StartCoroutine(peopleGen());
+
+
             }
             if (stopTimer == false)
             {
-                timerSlider.value = sliderTimer;
+                timerSlider.value = sliderTimer; //Timer is running
             }
         }
         
+    }
+
+    IEnumerator peopleGen()
+    {
+        yield return new WaitForSeconds(10);
+        GameManager.Instance.AddPeople(10);
+        StartCoroutine(peopleGen());
     }
 }
