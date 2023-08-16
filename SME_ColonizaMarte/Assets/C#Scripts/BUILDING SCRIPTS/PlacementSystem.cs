@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CodeMonkey;
+using CodeMonkey.Utils;
+using CodeMonkey.MonoBehaviours;
 
 public class PlacementSystem : MonoBehaviour
 {
@@ -37,6 +40,10 @@ public class PlacementSystem : MonoBehaviour
         StopPlacementInverandero();
         StopPlacementLaboratorio();
         StopPlacementTaller();
+        BuildingTimeSystem.OnTick += delegate (object sender, BuildingTimeSystem.OnTickEventArgs e )
+        {
+            CMDebug.TextPopupMouse("tick:" + e.tick);
+        };
     }
 
     //Modos de Construccion
