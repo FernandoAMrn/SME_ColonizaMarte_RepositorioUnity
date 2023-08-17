@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
+    // FIELDS PARA SISTEMA DE DIA Y NOCHE
     [SerializeField]
     private float timeMultiplier;
 
@@ -27,7 +29,18 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     private float sunsetHour;
 
+    // FIELDS PARA EL CONTADOR DE VICTORIA
+    public Slider timerSlider;
+    public float sliderTimer;
     
+
+    public bool stopTimer = false;
+
+    public GameObject VictoryPanel;
+    public GameObject DefeatPanel;
+
+
+
 
     private void Start()
     {
@@ -35,15 +48,60 @@ public class TimeManager : MonoBehaviour
 
         sunriseTime = TimeSpan.FromHours(sunRiseHour);
         sunsetTime = TimeSpan.FromHours(sunsetHour);
+
+        //INICIALIZACION DE CONTADOR DE VICOTRIA
+        timerSlider.maxValue = sliderTimer;
+        timerSlider.value = sliderTimer;
+        StartTimer();
+       
     }
+
+    private void StartTimer()
+    {
+        StartCoroutine(StartTheTimerTicker());
+    }
+
+    IEnumerator StartTheTimerTicker()
+    {
+        while (stopTimer == false)
+        {
+            sliderTimer -= Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if (sliderTimer <= 0)
+            {
+                stopTimer = true; //SE ACABO EL TIEMPO
+                if (GameManager.energy >= 100 && GameManager.food >= 100 && GameManager.maxPeople >= 100)
+                {
+                    VictoryPanel.SetActive(true);
+                }
+                else
+                {
+                    DefeatPanel.SetActive(true);
+                }
+            }
+
+            if (stopTimer == false)
+            {
+                timerSlider.value = sliderTimer; // NO SE HA ACABADO EL TIMEPO
+
+            }
+        }
+    }
+    // UPDATE
 
     private void Update()
     {
         updateTimeOfDay();
         RotateSun();
+        if (GameManager.energy >= 100 && GameManager.food >= 100 && GameManager.maxPeople >= 100)
+        {
+            VictoryPanel.SetActive(true);
+        }
     }
 
-
+    // METODOS DE SISTEMA DE DIA Y NOCHE
+    #region
     private void updateTimeOfDay()
     {
         currentTime = currentTime.AddSeconds(Time.deltaTime * timeMultiplier);
@@ -90,4 +148,5 @@ public class TimeManager : MonoBehaviour
         }
         return difference;
     }
+    #endregion
 }
