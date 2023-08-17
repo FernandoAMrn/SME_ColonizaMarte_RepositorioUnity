@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
     public static int maxEnergy = 200;
     public static int energy = 0;
 
+    public static int rovers = 0;
+
+    
+
+    //PEOPLE UI
     public Slider PeopleSlider;
     public TextMeshProUGUI PeopleMaxUI;
     public TextMeshProUGUI PeopleCurrentUI;
@@ -33,7 +38,7 @@ public class GameManager : MonoBehaviour
     public int maxPeopleAmount = ManagerRecursos.maxPeople;
 
 
-
+    // FOOD UI
     public Slider FoodSlider;
     public TextMeshProUGUI FoodMaxUI;
     public TextMeshProUGUI FoodCurrentUI;
@@ -42,7 +47,7 @@ public class GameManager : MonoBehaviour
     public int maxFoodAmount = ManagerRecursos.maxFood;
 
 
-
+    // ENERGY UI
     public Slider EnergySlider;
     public TextMeshProUGUI EnergyMaxUI;
     public TextMeshProUGUI EnergyCurrentUI;
@@ -50,12 +55,18 @@ public class GameManager : MonoBehaviour
     public int currentEnergyAmount = ManagerRecursos.energy;
     public int maxEnergyAmount = ManagerRecursos.maxEnergy;
 
-    public static GameManager Instance;
+    // ROVERS UI
+    public TextMeshProUGUI RoversCurrentUI;
+    public int currentRoversAmount = ManagerRecursos.rovers;
+
+    public static GameManager Instance; // SINGLETON
 
     private void Awake()
     {
         Instance = this;
     }
+
+   
 
     //INTERFAZ DE USUARIO
     #region
@@ -89,6 +100,11 @@ public class GameManager : MonoBehaviour
         EnergySlider.maxValue = maxAmount;
         EnergySlider.value = currentEnergyAmount;
     }
+
+    public void updateRoverUI(int currentRoversAmount)
+    {
+        RoversCurrentUI.text = currentRoversAmount.ToString();
+    }
     #endregion
 
     //GENERA RECURSOS
@@ -110,7 +126,40 @@ public class GameManager : MonoBehaviour
         people += amount;
         updatePeopleUI(people, maxPeople); 
     }
+
+    public void AddRovers()
+    {
+        rovers += 1;
+        updateRoverUI(rovers);
+
+    }
+
     #endregion
+
+    //  QUITA RECURSOS
+
+    public void ExpendPeople(int amount)
+    {
+        people -= amount;
+        updatePeopleUI(people, maxPeople);
+    }
+
+    public void ExpendFood(int amount)
+    {
+        food -= amount;
+        updateFoodUI(food, maxFood);
+    }
+
+    public void ExpendEnergy(int amount)
+    {
+        energy -= amount;
+        updateEnergyUI(energy, maxEnergy);
+    }
+    public void ExpendRovers(int amount)
+    {
+        rovers -= amount;
+        
+    }
 
     //TIMER DE NAVE CON RECURSOS
     public void Update()

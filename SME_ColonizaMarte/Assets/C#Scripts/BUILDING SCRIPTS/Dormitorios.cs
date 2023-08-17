@@ -43,6 +43,7 @@ public class Dormitorios : MonoBehaviour
                 SliderParaOcultar.SetActive(false);
                 StartCoroutine(peopleGen());
 
+                //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
 
             }
             if (stopTimer == false)
@@ -55,7 +56,7 @@ public class Dormitorios : MonoBehaviour
 
     IEnumerator peopleGen()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         GameManager.Instance.AddPeople(10);
         StartCoroutine(peopleGen());
     }

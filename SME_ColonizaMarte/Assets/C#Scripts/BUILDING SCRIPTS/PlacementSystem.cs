@@ -29,6 +29,7 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     private GameObject Taller;
 
+    public GameObject NotEnoughResourcesPopUp;
     
 
     [SerializeField]
@@ -116,10 +117,32 @@ public class PlacementSystem : MonoBehaviour
             return;
         }
 
-        Vector3 mousePosition = inputManager.GetSelectedMapPosition();
-        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        GameObject newDormitorios = Instantiate(dormitorios);
-        newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+        if (GameManager.people >= 4 && GameManager.energy >= 3) //CHECA SI TIENE SUFICIENTES RECURSOS
+        {
+            Vector3 mousePosition = inputManager.GetSelectedMapPosition();
+            Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+            GameObject newDormitorios = Instantiate(dormitorios);
+            newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+            GameManager.Instance.ExpendPeople(4); // TO DO REGRESAR RECURSO DE PERSONAS CUANDO SE ACABE LA CONSTRUCCION
+            GameManager.Instance.ExpendEnergy(3);
+        }
+        //if (GameManager.rovers >= 4 && GameManager.energy >= 3)
+        //{
+        //    Vector3 mousePosition = inputManager.GetSelectedMapPosition();
+        //    Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+        //    GameObject newDormitorios = Instantiate(dormitorios);
+        //    newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+        //    GameManager.Instance.ExpendEnergy(3);
+        //    GameManager.Instance.ExpendRovers(4); 
+        //    // TO DO Recuerda regresaar la canmtidad de rovers
+        //}
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesOff", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
+
+        }
+        
        
     }
 
@@ -188,7 +211,10 @@ public class PlacementSystem : MonoBehaviour
         newDormitorios.transform.position = grid.CellToWorld(gridPosition);
     }
 
-
+    public void notEnoughResourcesOff()  // DESACTIVA EL POP UP DE RECURSOS
+    {
+        NotEnoughResourcesPopUp.SetActive(false);
+    }
 
     #endregion
 
