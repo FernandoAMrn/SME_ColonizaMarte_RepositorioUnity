@@ -152,11 +152,22 @@ public class PlacementSystem : MonoBehaviour
         {
             return;
         }
+        if (GameManager.people >= 2 && GameManager.energy >=3)
+        {
+            Vector3 mousePosition = inputManager.GetSelectedMapPosition();
+            Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+            GameObject newDormitorios = Instantiate(EstacionDeAgua);
+            newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+            GameManager.Instance.ExpendPeople(2);
+            GameManager.Instance.ExpendEnergy(2);
+        }
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesOff", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
 
-        Vector3 mousePosition = inputManager.GetSelectedMapPosition();
-        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        GameObject newDormitorios = Instantiate(EstacionDeAgua);
-        newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+        }
+
     }
 
     private void PlaceStructureEnergia()
@@ -165,11 +176,22 @@ public class PlacementSystem : MonoBehaviour
         {
             return;
         }
+        if (GameManager.people >= 3)
+        {
+            Vector3 mousePosition = inputManager.GetSelectedMapPosition();
+            Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+            GameObject newDormitorios = Instantiate(EstacionDeEnergia);
+            newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+            GameManager.Instance.ExpendPeople(3);
+        }
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesOff", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
 
-        Vector3 mousePosition = inputManager.GetSelectedMapPosition();
-        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        GameObject newDormitorios = Instantiate(EstacionDeEnergia);
-        newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+        }
+
+
     }
 
     private void PlaceStructureInvernadero()
@@ -178,11 +200,23 @@ public class PlacementSystem : MonoBehaviour
         {
             return;
         }
+        if (GameManager.people >=3 && GameManager.energy >= 3)
+        {
+            Vector3 mousePosition = inputManager.GetSelectedMapPosition();
+            Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+            GameObject newDormitorios = Instantiate(Invernadero);
+            newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+            GameManager.Instance.ExpendPeople(3);
+            GameManager.Instance.ExpendEnergy(3);
+        }
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesOff", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
 
-        Vector3 mousePosition = inputManager.GetSelectedMapPosition();
-        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        GameObject newDormitorios = Instantiate(Invernadero);
-        newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+        }
+
+
     }
 
     private void PlaceStructureLaboratorio()
@@ -192,10 +226,23 @@ public class PlacementSystem : MonoBehaviour
             return;
         }
 
-        Vector3 mousePosition = inputManager.GetSelectedMapPosition();
-        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        GameObject newDormitorios = Instantiate(Laboratorio);
-        newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+        if (GameManager.people >=4 && GameManager.energy >= 4)
+        {
+            Vector3 mousePosition = inputManager.GetSelectedMapPosition();
+            Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+            GameObject newDormitorios = Instantiate(Laboratorio);
+            newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+            GameManager.Instance.ExpendPeople(4);
+            GameManager.Instance.ExpendEnergy(4);
+        }
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesOff", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
+
+        }
+
+
     }
 
     private void PlaceStructureTaller()
@@ -204,11 +251,22 @@ public class PlacementSystem : MonoBehaviour
         {
             return;
         }
+        if (GameManager.people >= 4 && GameManager.energy >=3)
+        {
+            Vector3 mousePosition = inputManager.GetSelectedMapPosition();
+            Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+            GameObject newDormitorios = Instantiate(Taller);
+            newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+            GameManager.Instance.ExpendPeople(4);
+            GameManager.Instance.ExpendEnergy(2);
+        }
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesOff", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
 
-        Vector3 mousePosition = inputManager.GetSelectedMapPosition();
-        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        GameObject newDormitorios = Instantiate(Taller);
-        newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+        }
+
     }
 
     public void notEnoughResourcesOff()  // DESACTIVA EL POP UP DE RECURSOS

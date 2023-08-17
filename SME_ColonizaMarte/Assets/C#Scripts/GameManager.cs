@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [Header("Limit Setting")]
     public float timerLimit;
     public GameObject defeatPanel;
+    public GameObject NotEnoughResourcesPopUp;
 
 
     public static int maxPeople = 200;
@@ -129,8 +130,20 @@ public class GameManager : MonoBehaviour
 
     public void AddRovers()
     {
-        rovers += 1;
-        updateRoverUI(rovers);
+        if (people >=1 && energy >= 3)
+        {
+            rovers += 1;
+            updateRoverUI(rovers);
+            ExpendEnergy(3);
+            ExpendPeople(1);
+        }
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesApagado", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
+
+        }
+
 
     }
 
@@ -159,6 +172,11 @@ public class GameManager : MonoBehaviour
     {
         rovers -= amount;
         
+    }
+
+    public void notEnoughResourcesApagado()  // DESACTIVA EL POP UP DE RECURSOS
+    {
+        NotEnoughResourcesPopUp.SetActive(false);
     }
 
     //TIMER DE NAVE CON RECURSOS
