@@ -6,8 +6,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Component")]
-    public TextMeshProUGUI timerText;
+    //[Header("Component")]
+    //public TextMeshProUGUI timerText;
     [Header("TimerSettings")]
     public float currentTime;
     [Header("Limit Setting")]
@@ -180,26 +180,26 @@ public class GameManager : MonoBehaviour
     }
 
     //TIMER DE NAVE CON RECURSOS
-    public void Update()
-    {
-        currentTime = currentTime -= Time.deltaTime;
+    //public void Update()
+    //{
+    //    currentTime = currentTime -= Time.deltaTime;
 
-        if (currentTime <= timerLimit)
-        {
-            currentTime = timerLimit;
-            SetTimerText();
-            timerText.color = Color.red;
-            enabled = false;
+    //    if (currentTime <= timerLimit)
+    //    {
+    //        currentTime = timerLimit;
+    //        SetTimerText();
+    //        timerText.color = Color.red;
+    //        enabled = false;
             
             
-        }
-        SetTimerText();
-    }
+    //    }
+    //    SetTimerText();
+    //}
 
-    private void SetTimerText()
-    {
-        timerText.text = currentTime.ToString("0");
-    }
+    //private void SetTimerText()
+    //{
+    //    timerText.text = currentTime.ToString("0");
+    //}
 
     //Instanceamineto de edificios
 
