@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputSystem : MonoBehaviour
+public class InputSystem : MonoBehaviour       // MOVIMIENTO DE LA CAMARA 
 {
     //MOVEMENT FIELDS
     public Transform cameraTransform;

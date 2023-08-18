@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.EventSystems;
 
-public class InputManager : MonoBehaviour
+public class InputManager : MonoBehaviour    // INTERPRETA LA POSICION DEL MOUSE COMO PUNTO EN EL GRID
 {
     //GRID FIELDS
     [SerializeField]

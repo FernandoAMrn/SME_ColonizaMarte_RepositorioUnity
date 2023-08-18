@@ -1,19 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
-public class Dormitorios : MonoBehaviour 
-
-    ///<summary>
-    ///  RESGUARDA A LOS HABITANTES MAX 20 EL JUGADOR NECESITARA CONSTRUIR 5 DE ESTOS PARA RECIBIR A TODAS LAS DEMAS PERSONAS
-    ///  
-    /// Tiempo de construccion: 2 Lunas
-    /// </summary>
+public class EstacionDeAgua : MonoBehaviour
 {
+    /// <summary>
+    /// +1 de comida cada luna
+    /// 
+    /// tiempo de construccion: 1 luna
+    /// </summary>
+    /// 
     public Slider timerSlider;
     public GameObject SliderParaOcultar;
 
@@ -22,7 +19,8 @@ public class Dormitorios : MonoBehaviour
     public bool stopTimer = false;
 
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         timerSlider.maxValue = sliderTimer;
         timerSlider.value = sliderTimer;
@@ -45,7 +43,7 @@ public class Dormitorios : MonoBehaviour
             {
                 stopTimer = true; //Timer is over
                 SliderParaOcultar.SetActive(false);
-                StartCoroutine(peopleGen());
+                StartCoroutine(GenAgua());
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
 
@@ -55,13 +53,14 @@ public class Dormitorios : MonoBehaviour
                 timerSlider.value = sliderTimer; //Timer is running
             }
         }
-        
+
     }
 
-    IEnumerator peopleGen()
+    IEnumerator GenAgua()
     {
-        yield return new WaitForSeconds(5);
-        GameManager.Instance.AddPeople(10);
-        StartCoroutine(peopleGen());
+        yield return new WaitForSeconds(20);
+        GameManager.Instance.AddFood(1);
+        StartCoroutine(GenAgua());
     }
+    
 }

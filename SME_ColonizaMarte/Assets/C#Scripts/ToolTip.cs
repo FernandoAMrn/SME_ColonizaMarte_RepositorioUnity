@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public GameObject InfoPanel;
+    public GameObject InfoPanel; // TOOLTIPS DE INFO DE LOS EDIFICIOS
 
     public void OnPointerEnter(PointerEventData eventData)
     {

@@ -6,23 +6,63 @@ using UnityEngine.UI;
 public class Invernadero : MonoBehaviour
 {
     /// <summary>
-    /// El INVERNADERO DA 10 RECURSOS DE COMIDA CADA 30 SEGUNDOS
+    ///  +2 de comida cada luna
+    ///  
+    /// Tiempo de construccion: 3 lunas
     /// </summary>
     /// 
 
-    
+    public Slider timerSlider;
+    public GameObject SliderParaOcultar;
+
+    public float sliderTimer;
+
+    public bool stopTimer = false;
+
 
     private void Start()
     {
-        StartCoroutine(recolectComida());
-        
-    }
-    IEnumerator recolectComida()
-    {
-        yield return new WaitForSeconds(2);
+        timerSlider.maxValue = sliderTimer;
+        timerSlider.value = sliderTimer;
+        StartTimer();
 
-        GameManager.Instance.AddFood(10);
-        StartCoroutine(recolectComida());
+    }
+
+    public void StartTimer()
+    {
+        StartCoroutine(StarTheTimerTicker()); //Inicializacion de Corutina del timer
+    }
+
+    IEnumerator StarTheTimerTicker()
+    {
+        while (stopTimer == false)
+        {
+            sliderTimer -= Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if (sliderTimer <= 0)
+            {
+                stopTimer = true; //Timer is over
+                SliderParaOcultar.SetActive(false);
+                StartCoroutine(GenInvernadero());
+
+                //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
+
+            }
+            if (stopTimer == false)
+            {
+                timerSlider.value = sliderTimer; //Timer is running
+            }
+        }
+
+    }
+
+    IEnumerator GenInvernadero()
+    {
+        yield return new WaitForSeconds(20); // NUMERO DE SEGUNDOS DE PRODUCCION
+
+        GameManager.Instance.AddFood(2); // CANTIDAD DE COMIDA PRODUCCIDA
+        StartCoroutine(GenInvernadero());
     }
 
     

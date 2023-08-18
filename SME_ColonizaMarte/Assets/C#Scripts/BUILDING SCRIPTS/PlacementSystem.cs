@@ -6,7 +6,7 @@ using CodeMonkey;
 using CodeMonkey.Utils;
 using CodeMonkey.MonoBehaviours;
 
-public class PlacementSystem : MonoBehaviour
+public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR LOS EDIFICIOS
 {
     [SerializeField]
     private GameObject mouseIndicator, cellIndicator;
