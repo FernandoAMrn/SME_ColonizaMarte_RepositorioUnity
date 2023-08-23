@@ -181,8 +181,10 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(EstacionDeEnergia);
-            newDormitorios.transform.position = grid.CellToWorld(gridPosition);
+            newDormitorios.transform.position = grid.CellToWorld(gridPosition);  
             GameManager.Instance.ExpendPeople(3);
+
+            // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }
         else // ENVIA POP UP DE QUE FALTAN RECURSOS
         {
@@ -208,6 +210,8 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
             GameManager.Instance.ExpendPeople(3);
             GameManager.Instance.ExpendEnergy(3);
+
+            // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }
         else // ENVIA POP UP DE QUE FALTAN RECURSOS
         {
@@ -234,6 +238,8 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
             GameManager.Instance.ExpendPeople(4);
             GameManager.Instance.ExpendEnergy(4);
+
+            // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }
         else // ENVIA POP UP DE QUE FALTAN RECURSOS
         {
@@ -259,6 +265,8 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
             GameManager.Instance.ExpendPeople(4);
             GameManager.Instance.ExpendEnergy(2);
+
+            // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }
         else // ENVIA POP UP DE QUE FALTAN RECURSOS
         {
