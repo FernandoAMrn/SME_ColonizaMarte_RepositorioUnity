@@ -16,14 +16,14 @@ public class GameManager : MonoBehaviour
     public GameObject NotEnoughResourcesPopUp;
 
 
-    public static int maxPeople = 200;
+    public static int maxPeople = 0;
     public static int people = 0;
 
-    public static int maxFood = 200;
+    public static int maxFood = 0;
     public static int food = 0;
 
 
-    public static int maxEnergy = 200;
+    public static int maxEnergy = 0;
     public static int energy = 0;
 
     public static int rovers = 0;
@@ -126,6 +126,12 @@ public class GameManager : MonoBehaviour
     {
         people += amount;
         updatePeopleUI(people, maxPeople); 
+    }
+
+    public void AddMaxPeople(int amount)
+    {
+        maxPeople += amount;
+        updatePeopleUI(people, maxPeople);
     }
 
     public void AddRovers()

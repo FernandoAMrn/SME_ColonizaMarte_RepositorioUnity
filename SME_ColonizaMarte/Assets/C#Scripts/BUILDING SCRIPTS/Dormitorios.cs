@@ -61,7 +61,7 @@ public class Dormitorios : MonoBehaviour
     IEnumerator peopleGen()
     {
         yield return new WaitForSeconds(5);
-        GameManager.Instance.AddPeople(10);
-        StartCoroutine(peopleGen());
+        GameManager.Instance.AddMaxPeople(20);
+        
     }
 }
