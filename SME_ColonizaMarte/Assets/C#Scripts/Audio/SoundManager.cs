@@ -18,6 +18,7 @@ public class SoundManager : MonoBehaviour
         {
             Load();
         }
+
     }
 
     public void ChangeVolume()
@@ -36,3 +37,5 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.SetFloat("musicVolume", musicVolume.value);
     }
 }
+
+
