@@ -6,8 +6,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    //[Header("Component")]
-    //public TextMeshProUGUI timerText;
+    [Header("Component")]
+    public TextMeshProUGUI timerText;
     [Header("TimerSettings")]
     public float currentTime;
     [Header("Limit Setting")]
@@ -19,11 +19,11 @@ public class GameManager : MonoBehaviour
     public static int maxPeople = 0;
     public static int people = 0;
 
-    public static int maxFood = 0;
+    public static int maxFood = 100;
     public static int food = 0;
 
 
-    public static int maxEnergy = 0;
+    public static int maxEnergy = 100;
     public static int energy = 0;
 
     public static int rovers = 0;
@@ -65,7 +65,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        StartCoroutine(InitialDrop());
     }
+    
+   
 
    
 
@@ -163,10 +166,12 @@ public class GameManager : MonoBehaviour
         updatePeopleUI(people, maxPeople);
     }
 
-    public void ExpendFood(int amount)
+    IEnumerator ConsumeFood()
     {
-        food -= amount;
+        yield return new WaitForSeconds(42);
+        food -= 20;
         updateFoodUI(food, maxFood);
+        StartCoroutine(ConsumeFood());
     }
 
     public void ExpendEnergy(int amount)
@@ -186,30 +191,37 @@ public class GameManager : MonoBehaviour
     }
 
     //TIMER DE NAVE CON RECURSOS
-    //public void Update()
-    //{
-    //    currentTime = currentTime -= Time.deltaTime;
+    public void Update()
+    {
+        currentTime = currentTime -= Time.deltaTime;
 
-    //    if (currentTime <= timerLimit)
-    //    {
-    //        currentTime = timerLimit;
-    //        SetTimerText();
-    //        timerText.color = Color.red;
-    //        enabled = false;
-            
-            
-    //    }
-    //    SetTimerText();
-    //}
+        if (currentTime <= timerLimit)
+        {
+            currentTime = timerLimit;
+            SetTimerText();
+            timerText.color = Color.red;
+            enabled = false;
 
-    //private void SetTimerText()
-    //{
-    //    timerText.text = currentTime.ToString("0");
-    //}
 
-    //Instanceamineto de edificios
+        }
+        SetTimerText();
+    }
 
-    
+    private void SetTimerText()
+    {
+        timerText.text = currentTime.ToString("0");
+    }
+
+    //Drop de recursos incial
+    IEnumerator InitialDrop()
+    {
+        yield return new WaitForSeconds(12);
+        AddPeople(20);
+        AddFood(60);
+
+        StartCoroutine(ConsumeFood());
+    }
+
 
 
 }
