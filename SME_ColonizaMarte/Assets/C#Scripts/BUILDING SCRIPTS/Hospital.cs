@@ -20,7 +20,7 @@ public class Hospital : MonoBehaviour
 
     IEnumerator CountdownParaCheckeo()
     {
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(42);
         ChecaPacientes();
     }
 

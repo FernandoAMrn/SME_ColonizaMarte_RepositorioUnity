@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 
 public class EstacionDeEnergia : MonoBehaviour 
@@ -15,12 +17,18 @@ public class EstacionDeEnergia : MonoBehaviour
 {
     public Slider timerSlider;
     public GameObject SliderParaOcultar;
+    public GameObject panelDeEnergia;
 
     public float sliderTimer;
 
     public bool stopTimer = false;
 
+    public int energyAmount;
+    public TextMeshProUGUI energyAmountText;
 
+    
+
+    
     private void Start()
     {
         
@@ -28,12 +36,22 @@ public class EstacionDeEnergia : MonoBehaviour
         timerSlider.maxValue = sliderTimer;
         timerSlider.value = sliderTimer;
         StartTimer();
+
+        //Cantidad de energia + UI de energia
+        energyAmount = 1;
+
+        energyAmountText.text = energyAmount.ToString();
     }
 
     public void StartTimer()
     {
         StartCoroutine(StarTheTimerTicker()); //Inicializacion de Corutina del timer
     }
+    public void Update()
+    {
+        energyAmountText.text = energyAmount.ToString();
+    }
+
 
     IEnumerator StarTheTimerTicker()
     {
@@ -46,6 +64,7 @@ public class EstacionDeEnergia : MonoBehaviour
             {
                 stopTimer = true; //Timer is over
                 SliderParaOcultar.SetActive(false);
+                panelDeEnergia.SetActive(true);
                 StartCoroutine(energyGen());
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
@@ -63,8 +82,20 @@ public class EstacionDeEnergia : MonoBehaviour
     {
         yield return new WaitForSeconds(2);  // TIEMPO DE PRODUCCION
         //ManagerRecursos.energy += 10;
-        GameManager.Instance.AddEnergy(10); // CANTIDAD DE ENERGIA PRODUCIDA
+        GameManager.Instance.AddEnergy(energyAmount); // CANTIDAD DE ENERGIA PRODUCIDA
         StartCoroutine(energyGen());
 
     }
+
+    public void increaseEnergy(int amount)
+    {
+        energyAmount += amount;
+        updateAmountUI();
+    }
+    public void updateAmountUI()
+    {
+        energyAmountText.text = energyAmount.ToString();
+    }
+
+
 }
