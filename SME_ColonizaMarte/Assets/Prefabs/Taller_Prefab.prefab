@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7826791912613770826}
   - component: {fileID: 5336703669513792301}
+  - component: {fileID: 2450860852635568739}
   m_Layer: 0
   m_Name: Taller_Prefab
-  m_TagString: Untagged
+  m_TagString: Taller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +48,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   estacionDeEnergia: {fileID: 7925982493328236313, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+--- !u!65 &2450860852635568739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7826791912613770825}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.793979, y: 0.6589035, z: 1.6955017}
+  m_Center: {x: 0, y: 0.17054826, z: 0}
 --- !u!1001 &7826791912807642919
 PrefabInstance:
   m_ObjectHideFlags: 0

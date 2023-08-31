@@ -87,15 +87,23 @@ public class EstacionDeEnergia : MonoBehaviour
 
     }
 
-    public void increaseEnergy(int amount)
+    private void OnTriggerEnter(Collider other)
     {
-        energyAmount += amount;
-        updateAmountUI();
+        if (other.CompareTag("Taller"))
+        {
+            increaseEnergyAmount();
+        }
     }
     public void updateAmountUI()
     {
         energyAmountText.text = energyAmount.ToString();
     }
 
+    public void increaseEnergyAmount()
+    {
+        energyAmount += 1;
+        updateAmountUI();
+    }
+    
 
 }

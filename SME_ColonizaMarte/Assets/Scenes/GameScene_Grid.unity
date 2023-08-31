@@ -5963,6 +5963,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881689183}
   m_CullTransparentMesh: 1
+--- !u!114 &885705572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7925982493328236313, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+  m_PrefabInstance: {fileID: 1887764943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3279ba91b6ddb4385d7192bee8c791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &887366685
 GameObject:
   m_ObjectHideFlags: 0
@@ -12006,6 +12017,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883853672}
   m_CullTransparentMesh: 1
+--- !u!1001 &1887764943
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3191542515801966961, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191542515801966961, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616636, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723556161142616639, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+      propertyPath: m_Name
+      value: EstacionDeEnergia_Prefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
 --- !u!1 &1891772406
 GameObject:
   m_ObjectHideFlags: 0
@@ -12844,9 +12920,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Taller, Assembly-CSharp
-        m_MethodName: SummonIncreaseEenrgy
+      - m_Target: {fileID: 885705572}
+        m_TargetAssemblyTypeName: EstacionDeEnergia, Assembly-CSharp
+        m_MethodName: increaseEnergyAmount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
