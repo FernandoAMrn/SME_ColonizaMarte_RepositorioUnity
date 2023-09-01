@@ -18,6 +18,7 @@ public class EstacionDeEnergia : MonoBehaviour
     public Slider timerSlider;
     public GameObject SliderParaOcultar;
     public GameObject panelDeEnergia;
+    public GameObject energyVFX;
 
     public float sliderTimer;
 
@@ -68,6 +69,7 @@ public class EstacionDeEnergia : MonoBehaviour
                 stopTimer = true; //Timer is over
                 SliderParaOcultar.SetActive(false);
                 panelDeEnergia.SetActive(true);
+                energyVFX.SetActive(true);
                 StartCoroutine(energyGen());
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
@@ -98,7 +100,7 @@ public class EstacionDeEnergia : MonoBehaviour
 
     public void increaseEnergyAmount()
     {
-        energyAmount += 1;
+        energyAmount *= 2;
         updateAmountUI();
     }
     

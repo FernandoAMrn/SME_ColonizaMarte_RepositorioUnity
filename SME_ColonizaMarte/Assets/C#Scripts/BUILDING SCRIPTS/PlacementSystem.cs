@@ -9,7 +9,7 @@ using CodeMonkey.MonoBehaviours;
 public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR LOS EDIFICIOS
 {
     [SerializeField]
-    private GameObject mouseIndicator, cellIndicator;
+    private GameObject cellIndicator;
     [SerializeField]
     private InputManager inputManager;
     [SerializeField]
@@ -348,7 +348,7 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
        
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        mouseIndicator.transform.position = mousePosition;
+        
         cellIndicator.transform.position = grid.CellToWorld(gridPosition);
 
     }
