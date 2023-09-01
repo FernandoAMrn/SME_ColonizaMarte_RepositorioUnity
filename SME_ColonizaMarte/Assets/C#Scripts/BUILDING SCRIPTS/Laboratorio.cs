@@ -1,18 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Laboratorio : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Duplica la produccion de la estacion de energia más recientemente construida
+    /// </summary>
+    /// 
+
+    public Slider timerSlider;
+    public GameObject sliderParaOcultar;
+    public GameObject VFX;
+
+    public float sliderTimer;
+
+    public bool stopTimer = false;
+    private void Start()
     {
-        
+
+        timerSlider.maxValue = sliderTimer;
+        timerSlider.value = sliderTimer;
+        StartTimer();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartTimer()
     {
-        
+        StartCoroutine(StarTheTimerTicker()); //Inicializacion de Corutina del timer
+    }
+
+
+
+    IEnumerator StarTheTimerTicker()
+    {
+        while (stopTimer == false)
+        {
+            sliderTimer -= Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if (sliderTimer <= 0)
+            {
+                stopTimer = true; //Timer is over
+                sliderParaOcultar.SetActive(false);
+                VFX.SetActive(true);
+                increaseFoodGen();
+
+
+
+                //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
+
+            }
+            if (stopTimer == false)
+            {
+                timerSlider.value = sliderTimer; //Timer is running
+            }
+        }
+
+    }
+
+    public void increaseFoodGen()
+    {
+        Invernadero.Instance.increaseFoodAmount();
     }
 }

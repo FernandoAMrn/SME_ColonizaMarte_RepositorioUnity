@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EstacionDeAgua : MonoBehaviour
 {
@@ -13,17 +14,25 @@ public class EstacionDeAgua : MonoBehaviour
     /// 
     public Slider timerSlider;
     public GameObject SliderParaOcultar;
+    public GameObject panelAmount;
+    public GameObject VFX;
 
     public float sliderTimer;
 
     public bool stopTimer = false;
 
 
+    public int foodAmount;
+    public TextMeshProUGUI foodAmountText;
+
     // Start is called before the first frame update
     void Start()
     {
         timerSlider.maxValue = sliderTimer;
         timerSlider.value = sliderTimer;
+
+        foodAmount = 1;
+        updateNumberUI();
         StartTimer();
     }
 
@@ -43,6 +52,8 @@ public class EstacionDeAgua : MonoBehaviour
             {
                 stopTimer = true; //Timer is over
                 SliderParaOcultar.SetActive(false);
+                panelAmount.SetActive(true);
+                VFX.SetActive(true);
                 StartCoroutine(GenAgua());
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
@@ -58,9 +69,14 @@ public class EstacionDeAgua : MonoBehaviour
 
     IEnumerator GenAgua()
     {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(42);
         GameManager.Instance.AddFood(1);
         StartCoroutine(GenAgua());
+    }
+
+    public void updateNumberUI()
+    {
+        foodAmountText.text = foodAmount.ToString();
     }
     
 }

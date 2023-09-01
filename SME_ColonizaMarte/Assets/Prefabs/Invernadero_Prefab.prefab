@@ -325,6 +325,7 @@ Transform:
   - {fileID: 6195214460149116268}
   - {fileID: 6195214460235017591}
   - {fileID: 7017968032244855485}
+  - {fileID: 3710778836874633032}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -343,6 +344,7 @@ MonoBehaviour:
   timerSlider: {fileID: 2795197727689419932}
   SliderParaOcultar: {fileID: 6004685172750946021}
   panelDeComida: {fileID: 3867560118982413675}
+  FoodVFX: {fileID: 4566280842550591645}
   sliderTimer: 20
   stopTimer: 0
   foodAmount: 0
@@ -724,6 +726,125 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &4790205737814099642
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5941210836856054292}
+    m_Modifications:
+    - target: {fileID: 4678103677468820507, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678103677468820507, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678103677468820507, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678103677468820507, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129887499531044342, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858841876001134857, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: SizeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858841876001134857, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858841876001134857, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 2.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5840959
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5840959
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5840959
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.283
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017484664307500583, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_Name
+      value: Food_VFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017484664307500583, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061006324790107658, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+--- !u!4 &3710778836874633032 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8144037599045065202, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+  m_PrefabInstance: {fileID: 4790205737814099642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4566280842550591645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9017484664307500583, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+  m_PrefabInstance: {fileID: 4790205737814099642}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5941210836530268828
 PrefabInstance:
   m_ObjectHideFlags: 0
