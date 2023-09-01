@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Invernadero : MonoBehaviour
 {
@@ -12,13 +13,26 @@ public class Invernadero : MonoBehaviour
     /// </summary>
     /// 
 
+    //Timer de construccion
     public Slider timerSlider;
     public GameObject SliderParaOcultar;
+    public GameObject panelDeComida;
 
     public float sliderTimer;
 
     public bool stopTimer = false;
+    //Timer de Construccion
 
+    //UI de catidad
+    public int foodAmount;
+    public TextMeshProUGUI foodAmountText;
+
+    public static Invernadero Instance;
+
+    public void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -26,6 +40,9 @@ public class Invernadero : MonoBehaviour
         timerSlider.value = sliderTimer;
         StartTimer();
 
+        foodAmount = 2;
+
+        foodAmountText.text = foodAmount.ToString();
     }
 
     public void StartTimer()
@@ -44,6 +61,7 @@ public class Invernadero : MonoBehaviour
             {
                 stopTimer = true; //Timer is over
                 SliderParaOcultar.SetActive(false);
+                panelDeComida.SetActive(true);
                 StartCoroutine(GenInvernadero());
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
@@ -63,6 +81,16 @@ public class Invernadero : MonoBehaviour
 
         GameManager.Instance.AddFood(2); // CANTIDAD DE COMIDA PRODUCCIDA
         StartCoroutine(GenInvernadero());
+    }
+
+    public void updateFoodUI()
+    {
+        foodAmountText.text = foodAmount.ToString();
+    }
+    public void increaseFoodAmount()
+    {
+        foodAmount += 1;
+        updateFoodUI();
     }
 
     

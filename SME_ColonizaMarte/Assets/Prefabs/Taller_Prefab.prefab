@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140e6dc212ad7c747b3f48ccb210a09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taller: {fileID: 5336703669513792301}
   estacionDeEnergia: {fileID: 7925982493328236313, guid: 650ffb98862caec4e8713bd6fbb0f3a4, type: 3}
+  distance_: 0
 --- !u!65 &2450860852635568739
 BoxCollider:
   m_ObjectHideFlags: 0

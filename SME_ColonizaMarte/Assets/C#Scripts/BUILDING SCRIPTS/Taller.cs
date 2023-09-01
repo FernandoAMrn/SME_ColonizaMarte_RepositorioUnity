@@ -4,23 +4,8 @@ using UnityEngine;
 
 public class Taller : MonoBehaviour
 {
-    public EstacionDeEnergia estacionDeEnergia;
-
-
-    public void Start()
+    private void Start()
     {
-        estacionDeEnergia.energyAmount += 1;
+        EstacionDeEnergia.Instance.increaseEnergyAmount();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-  
-
-
-
-
 }

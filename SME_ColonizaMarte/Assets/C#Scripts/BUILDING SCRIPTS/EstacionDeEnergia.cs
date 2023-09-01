@@ -28,7 +28,13 @@ public class EstacionDeEnergia : MonoBehaviour
 
     
 
-    
+    public static EstacionDeEnergia Instance;
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         
@@ -47,10 +53,7 @@ public class EstacionDeEnergia : MonoBehaviour
     {
         StartCoroutine(StarTheTimerTicker()); //Inicializacion de Corutina del timer
     }
-    public void Update()
-    {
-        energyAmountText.text = energyAmount.ToString();
-    }
+   
 
 
     IEnumerator StarTheTimerTicker()
@@ -81,19 +84,13 @@ public class EstacionDeEnergia : MonoBehaviour
     IEnumerator energyGen()
     {
         yield return new WaitForSeconds(2);  // TIEMPO DE PRODUCCION
-        //ManagerRecursos.energy += 10;
+        
         GameManager.Instance.AddEnergy(energyAmount); // CANTIDAD DE ENERGIA PRODUCIDA
         StartCoroutine(energyGen());
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Taller"))
-        {
-            increaseEnergyAmount();
-        }
-    }
+   
     public void updateAmountUI()
     {
         energyAmountText.text = energyAmount.ToString();

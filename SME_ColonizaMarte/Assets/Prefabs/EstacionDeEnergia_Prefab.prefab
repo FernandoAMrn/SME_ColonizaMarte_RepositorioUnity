@@ -438,6 +438,9 @@ MonoBehaviour:
   stopTimer: 0
   energyAmount: 0
   energyAmountText: {fileID: 630747679824857223}
+  taller: {fileID: 5336703669513792301, guid: 256584e291720cc4fb8702aa6d5fb02b, type: 3}
+  estacionDeEnergia: {fileID: 7925982493328236313}
+  distance_: 0
 --- !u!65 &2209763134437944459
 BoxCollider:
   m_ObjectHideFlags: 0
