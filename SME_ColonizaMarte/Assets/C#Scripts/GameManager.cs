@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public static int energy = 0;
 
     public static int rovers = 0;
+    public int moon;
+    public TextMeshProUGUI moonText;
 
     
 
@@ -66,11 +68,19 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         StartCoroutine(InitialDrop());
-    }
-    
-   
 
-   
+        
+    }
+    private void Start()
+    {
+        moon = 28;
+        updateMoonUI();
+        
+    }
+
+
+
+
 
     //INTERFAZ DE USUARIO
     #region
@@ -93,6 +103,8 @@ public class GameManager : MonoBehaviour
 
         FoodSlider.maxValue = maxFoodAmount;
         FoodSlider.value = currentFoodAmount;
+
+        
     }
 
     public void updateEnergyUI(int currentEnergyAmount, int maxAmount)
@@ -123,6 +135,7 @@ public class GameManager : MonoBehaviour
     {
         food += amount;
         updateFoodUI(food, maxFood);
+
     }
 
     public void AddPeople(int amount)
@@ -170,8 +183,13 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(42);
         food -= 20;
+        moon -= 1;
+        updateMoonUI();
         updateFoodUI(food, maxFood);
         StartCoroutine(ConsumeFood());
+
+        
+
     }
 
     public void ExpendEnergy(int amount)
@@ -220,6 +238,11 @@ public class GameManager : MonoBehaviour
         AddFood(60);
 
         StartCoroutine(ConsumeFood());
+    }
+
+    private void updateMoonUI()
+    {
+        moonText.text = moon.ToString();
     }
 
 

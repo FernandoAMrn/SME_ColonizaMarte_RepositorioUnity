@@ -35,4 +35,9 @@ public class PauseBTTN : MonoBehaviour
         canvasAudio.SetActive(false);
         botonAudio.SetActive(true);
     }
+
+    public void pausaSinPanel()
+    {
+        Time.timeScale = 0;
+    }
 }
