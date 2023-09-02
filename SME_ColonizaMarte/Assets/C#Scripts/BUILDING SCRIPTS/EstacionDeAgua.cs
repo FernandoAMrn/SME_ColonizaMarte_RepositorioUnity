@@ -55,6 +55,7 @@ public class EstacionDeAgua : MonoBehaviour
                 panelAmount.SetActive(true);
                 VFX.SetActive(true);
                 StartCoroutine(GenAgua());
+                GameManager.Instance.AddPeople(2);
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
 

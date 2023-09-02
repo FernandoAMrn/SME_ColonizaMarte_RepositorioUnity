@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         updatePeopleUI(people, maxPeople);
     }
 
-    public void AddRovers()
+    public void AddRovers() // >>>>>>> CAMBIAR FUNCIONAMIENTO DE ROVERS <<<<<<
     {
         if (people >=1 && energy >= 3)
         {

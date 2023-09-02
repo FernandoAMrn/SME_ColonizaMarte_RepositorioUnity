@@ -46,7 +46,7 @@ public class Laboratorio : MonoBehaviour
                 sliderParaOcultar.SetActive(false);
                 VFX.SetActive(true);
                 increaseFoodGen();
-
+                GameManager.Instance.AddPeople(4);
 
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system

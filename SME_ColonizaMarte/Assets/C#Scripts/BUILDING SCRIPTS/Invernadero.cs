@@ -65,6 +65,7 @@ public class Invernadero : MonoBehaviour
                 panelDeComida.SetActive(true);
                 FoodVFX.SetActive(true);
                 StartCoroutine(GenInvernadero());
+                GameManager.Instance.AddPeople(3);
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
 
