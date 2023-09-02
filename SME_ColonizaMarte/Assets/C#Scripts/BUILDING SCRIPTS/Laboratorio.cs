@@ -64,4 +64,9 @@ public class Laboratorio : MonoBehaviour
     {
         Invernadero.Instance.increaseFoodAmount();
     }
+
+    //IEnumerator regresaPersonas()
+    //{
+    //    yield return new WaitForSeconds
+    //}
 }

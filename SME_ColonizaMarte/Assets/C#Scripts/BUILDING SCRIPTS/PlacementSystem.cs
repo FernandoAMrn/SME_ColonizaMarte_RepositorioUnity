@@ -126,16 +126,7 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
             GameManager.Instance.ExpendPeople(4); // TO DO REGRESAR RECURSO DE PERSONAS CUANDO SE ACABE LA CONSTRUCCION
             GameManager.Instance.ExpendEnergy(3);
         }
-        //if (GameManager.rovers >= 4 && GameManager.energy >= 3)
-        //{
-        //    Vector3 mousePosition = inputManager.GetSelectedMapPosition();
-        //    Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        //    GameObject newDormitorios = Instantiate(dormitorios);
-        //    newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-        //    GameManager.Instance.ExpendEnergy(3);
-        //    GameManager.Instance.ExpendRovers(4); 
-        //    // TO DO Recuerda regresaar la canmtidad de rovers
-        //}
+        
         else // ENVIA POP UP DE QUE FALTAN RECURSOS
         {
             NotEnoughResourcesPopUp.SetActive(true);
@@ -341,6 +332,7 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
 #endregion
     //Termina Exit modos de construccion
 
+    
 
     //UPDATE
     private void Update()
