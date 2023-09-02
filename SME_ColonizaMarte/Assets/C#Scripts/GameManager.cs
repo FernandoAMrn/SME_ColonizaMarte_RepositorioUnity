@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
     {
         moon = 28;
         updateMoonUI();
+
+        Time.timeScale = 0;
         
     }
 
