@@ -41,7 +41,7 @@ public class Invernadero : MonoBehaviour
         timerSlider.value = sliderTimer;
         StartTimer();
 
-        foodAmount = 2;
+        foodAmount = 4;
 
         foodAmountText.text = foodAmount.ToString();
     }
@@ -82,7 +82,7 @@ public class Invernadero : MonoBehaviour
     {
         yield return new WaitForSeconds(42); // NUMERO DE SEGUNDOS DE PRODUCCION
 
-        GameManager.Instance.AddFood(2); // CANTIDAD DE COMIDA PRODUCCIDA
+        GameManager.Instance.AddFood(foodAmount); // CANTIDAD DE COMIDA PRODUCCIDA
         StartCoroutine(GenInvernadero());
     }
 

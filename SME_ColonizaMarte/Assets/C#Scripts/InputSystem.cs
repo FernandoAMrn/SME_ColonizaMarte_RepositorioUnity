@@ -23,12 +23,14 @@ public class InputSystem : MonoBehaviour       // MOVIMIENTO DE LA CAMARA
     //End MOVEMENT FIELDS
 
 
-  
+
     #region Input para movimiento de la camara
     private void Start()
     {
         newPosition = transform.position; //Mantiene la posicion de la camara cuando se empieza el juego
         newZoom = cameraTransform.localPosition;
+        
+        
     }
 
     private void Update()

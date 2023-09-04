@@ -45,7 +45,7 @@ public class EstacionDeEnergia : MonoBehaviour
         StartTimer();
 
         //Cantidad de energia + UI de energia
-        energyAmount = 1;
+        energyAmount = 2;
 
         energyAmountText.text = energyAmount.ToString();
     }
@@ -86,7 +86,7 @@ public class EstacionDeEnergia : MonoBehaviour
 
     IEnumerator energyGen()
     {
-        yield return new WaitForSeconds(2);  // TIEMPO DE PRODUCCION
+        yield return new WaitForSeconds(42);  // TIEMPO DE PRODUCCION
         
         GameManager.Instance.AddEnergy(energyAmount); // CANTIDAD DE ENERGIA PRODUCIDA
         StartCoroutine(energyGen());

@@ -435,7 +435,7 @@ MonoBehaviour:
   SliderParaOcultar: {fileID: 572894169031806523}
   panelDeEnergia: {fileID: 3512436668824221275}
   energyVFX: {fileID: 6419968641586809015}
-  sliderTimer: 20
+  sliderTimer: 21
   stopTimer: 0
   energyAmount: 0
   energyAmountText: {fileID: 630747679824857223}

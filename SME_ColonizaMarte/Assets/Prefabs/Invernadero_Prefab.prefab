@@ -345,7 +345,7 @@ MonoBehaviour:
   SliderParaOcultar: {fileID: 6004685172750946021}
   panelDeComida: {fileID: 3867560118982413675}
   FoodVFX: {fileID: 4566280842550591645}
-  sliderTimer: 20
+  sliderTimer: 42
   stopTimer: 0
   foodAmount: 0
   foodAmountText: {fileID: 4760750288188582043}
@@ -752,6 +752,22 @@ PrefabInstance:
     - target: {fileID: 5129887499531044342, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329450421456403366, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.60379755
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329450421456403366, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.60379755
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329450421456403366, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.60379755
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329450421456403366, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.89
       objectReference: {fileID: 0}
     - target: {fileID: 5858841876001134857, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
       propertyPath: SizeModule.enabled

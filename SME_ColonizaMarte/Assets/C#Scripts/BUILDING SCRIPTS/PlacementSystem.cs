@@ -143,7 +143,7 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
         {
             return;
         }
-        if (GameManager.people >= 2 && GameManager.energy >=3)
+        if (GameManager.people >= 2 && GameManager.energy >=2)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);

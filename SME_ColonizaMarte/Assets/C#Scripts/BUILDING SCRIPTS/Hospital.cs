@@ -11,6 +11,8 @@ public class Hospital : MonoBehaviour
     public TextMeshProUGUI numeroDePacientesUI;
     public int numeroDePacientes;
 
+    public GameObject healingVFX;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,15 +33,17 @@ public class Hospital : MonoBehaviour
 
     private void ChecaPacientes()
     {
-        if (GameManager.people >= GameManager.food)
+        if (GameManager.people > GameManager.food)
         {
             GameManager.Instance.ExpendPeople(3);
             StartCoroutine(DevuelvePersonas());
             StartCoroutine(CountdownParaCheckeo());
             numeroDePacientes = 3;
             updatePacientUI();
+
+            healingVFX.SetActive(true);
         }
-        if (GameManager.people <= GameManager.food)
+        else 
         {
             StartCoroutine(CountdownParaCheckeo());
         }
@@ -51,6 +55,8 @@ public class Hospital : MonoBehaviour
         GameManager.Instance.AddPeople(3);
         numeroDePacientes = 0;
         updatePacientUI();
+
+        healingVFX.SetActive(false);
     }
 
     public void updatePacientUI()

@@ -31,7 +31,7 @@ public class EstacionDeAgua : MonoBehaviour
         timerSlider.maxValue = sliderTimer;
         timerSlider.value = sliderTimer;
 
-        foodAmount = 1;
+        foodAmount = 2;
         updateNumberUI();
         StartTimer();
     }
@@ -71,7 +71,7 @@ public class EstacionDeAgua : MonoBehaviour
     IEnumerator GenAgua()
     {
         yield return new WaitForSeconds(42);
-        GameManager.Instance.AddFood(1);
+        GameManager.Instance.AddFood(foodAmount);
         StartCoroutine(GenAgua());
     }
 

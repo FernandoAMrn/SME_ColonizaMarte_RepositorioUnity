@@ -302,7 +302,7 @@ MonoBehaviour:
   SliderParaOcultar: {fileID: 8156899146725340756}
   panelAmount: {fileID: 9145052645953253199}
   VFX: {fileID: 1589158886704361275}
-  sliderTimer: 20
+  sliderTimer: 21
   stopTimer: 0
   foodAmount: 0
   foodAmountText: {fileID: 5574126285020883890}
@@ -938,6 +938,26 @@ PrefabInstance:
     - target: {fileID: 4678103677468820507, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329450421456403366, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.42572
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329450421456403366, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.42572
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329450421456403366, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.42572
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329450421456403366, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.386
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329450421456403366, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5858841876001134857, guid: 78f78f6595778774f9d30c85009dc1fb, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar

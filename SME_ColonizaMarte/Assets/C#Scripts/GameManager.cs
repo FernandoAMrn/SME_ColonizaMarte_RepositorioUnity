@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [Header("Limit Setting")]
     public float timerLimit;
     public GameObject defeatPanel;
+    public GameObject vitoryPanel;
     public GameObject NotEnoughResourcesPopUp;
 
 
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         
     }
+   
 
 
 
@@ -225,6 +227,14 @@ public class GameManager : MonoBehaviour
 
         }
         SetTimerText();
+        if (maxPeople >= 100 && food >= 100 && energy >= 100)
+        {
+            vitoryPanel.SetActive(true);
+        }
+        if (food <= 0)
+        {
+            defeatPanel.SetActive(false);
+        }
     }
 
     private void SetTimerText()
