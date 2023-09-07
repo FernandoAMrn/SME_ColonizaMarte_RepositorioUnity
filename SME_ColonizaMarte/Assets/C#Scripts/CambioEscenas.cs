@@ -22,7 +22,13 @@ public class CambioEscenas : MonoBehaviour
         SceneManager.LoadScene(2);
 
     }
-   
+    public void Extras()
+    {
+        //Carga el Turorial.
+        SceneManager.LoadScene(3);
+
+    }
+
     public void Finalizar()
     {
         //Finaliza la aplicacion.
