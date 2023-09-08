@@ -86,7 +86,7 @@ public class EstacionDeEnergia : MonoBehaviour
 
     IEnumerator energyGen()
     {
-        yield return new WaitForSeconds(42);  // TIEMPO DE PRODUCCION
+        yield return new WaitForSeconds(21);  // TIEMPO DE PRODUCCION
         
         GameManager.Instance.AddEnergy(energyAmount); // CANTIDAD DE ENERGIA PRODUCIDA
         StartCoroutine(energyGen());

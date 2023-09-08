@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour
     public int moon;
     public TextMeshProUGUI moonText;
 
-    
+
 
     //PEOPLE UI
     public Slider PeopleSlider;
@@ -63,6 +64,27 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI RoversCurrentUI;
     public int currentRoversAmount = ManagerRecursos.rovers;
 
+    public Slider timerSlider1;
+    public float sliderTiemr1;
+    public bool StopTimer1 = false;
+
+
+    public Slider timerSlider2;
+    public float sliderTiemr2;
+    public bool StopTimer2 = false;
+
+    public Slider timerSlider3;
+    public float sliderTiemr3;
+    public bool StopTimer3 = false;
+
+    public Slider timerSlider4;
+    public float sliderTiemr4;
+    public bool StopTimer4 = false;
+
+    public Slider timerSlider5;
+    public float sliderTiemr5;
+    public bool StopTimer5 = false;
+
     public static GameManager Instance; // SINGLETON
 
     private void Awake()
@@ -78,7 +100,22 @@ public class GameManager : MonoBehaviour
         updateMoonUI();
 
         Time.timeScale = 0;
-        
+
+        timerSlider1.maxValue = sliderTiemr1;
+        timerSlider1.value = sliderTiemr1;
+
+        timerSlider2.maxValue = sliderTiemr2;
+        timerSlider2.value = sliderTiemr2;
+
+        timerSlider3.maxValue = sliderTiemr3;
+        timerSlider3.value = sliderTiemr3;
+
+        timerSlider4.maxValue = sliderTiemr4;
+        timerSlider4.value = sliderTiemr4;
+
+        timerSlider5.maxValue = sliderTiemr5;
+        timerSlider5.value = sliderTiemr5;
+
     }
    
 
@@ -154,14 +191,16 @@ public class GameManager : MonoBehaviour
         updatePeopleUI(people, maxPeople);
     }
 
-    public void AddRovers() // >>>>>>> CAMBIAR FUNCIONAMIENTO DE ROVERS <<<<<<
+    //ROVERS
+    #region
+    public void AddRovers1() 
     {
         if (people >=1 && energy >= 3)
         {
-            rovers += 1;
-            updateRoverUI(rovers);
             ExpendEnergy(3);
             ExpendPeople(1);
+            StartCoroutine(StarTheTimerTicker1());
+            StartCoroutine(addsOneRover());
         }
         else // ENVIA POP UP DE QUE FALTAN RECURSOS
         {
@@ -173,6 +212,183 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void AddRovers2() 
+    {
+        if (people >= 1 && energy >= 3)
+        {
+            ExpendEnergy(3);
+            ExpendPeople(1);
+            StartCoroutine(StarTheTimerTicker2());
+            StartCoroutine(addsOneRover());
+        }
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesApagado", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
+
+        }
+
+
+    }
+
+    public void AddRovers3()
+    {
+        if (people >= 1 && energy >= 3)
+        {
+            ExpendEnergy(3);
+            ExpendPeople(1);
+            StartCoroutine(StarTheTimerTicker3());
+            StartCoroutine(addsOneRover());
+        }
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesApagado", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
+
+        }
+    }
+
+    public void AddRovers4()
+    {
+        if (people >= 1 && energy >= 3)
+        {
+            ExpendEnergy(3);
+            ExpendPeople(1);
+            StartCoroutine(StarTheTimerTicker4());
+            StartCoroutine(addsOneRover());
+        }
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesApagado", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
+
+        }
+    }
+
+    public void AddRovers5()
+    {
+        if (people >= 1 && energy >= 3)
+        {
+            ExpendEnergy(3);
+            ExpendPeople(1);
+            StartCoroutine(StarTheTimerTicker5());
+            StartCoroutine(addsOneRover());
+        }
+        else // ENVIA POP UP DE QUE FALTAN RECURSOS
+        {
+            NotEnoughResourcesPopUp.SetActive(true);
+            Invoke("notEnoughResourcesApagado", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
+
+        }
+    }
+
+    IEnumerator StarTheTimerTicker1()
+    {
+        while (StopTimer1 == false)
+        {
+            sliderTiemr1 -= Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if (sliderTiemr1 <= 0)
+            {
+                StopTimer1 = true; //Timer is over
+                
+            }
+            if (StopTimer1 == false)
+            {
+                timerSlider1.value = sliderTiemr1; //Timer is running
+            }
+        }
+    }
+
+    IEnumerator StarTheTimerTicker2()
+    {
+        while (StopTimer2 == false)
+        {
+            sliderTiemr2 -= Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if (sliderTiemr2 <= 0)
+            {
+                StopTimer2 = true; //Timer is over
+
+            }
+            if (StopTimer2 == false)
+            {
+                timerSlider2.value = sliderTiemr2; //Timer is running
+            }
+        }
+    }
+
+    IEnumerator StarTheTimerTicker3()
+    {
+        while (StopTimer3 == false)
+        {
+            sliderTiemr3 -= Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if (sliderTiemr3 <= 0)
+            {
+                StopTimer3 = true; //Timer is over
+
+            }
+            if (StopTimer3 == false)
+            {
+                timerSlider3.value = sliderTiemr3; //Timer is running
+            }
+        }
+    }
+
+    IEnumerator StarTheTimerTicker4()
+    {
+        while (StopTimer4 == false)
+        {
+            sliderTiemr4 -= Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if (sliderTiemr4 <= 0)
+            {
+                StopTimer4 = true; //Timer is over
+
+            }
+            if (StopTimer4 == false)
+            {
+                timerSlider4.value = sliderTiemr4; //Timer is running
+            }
+        }
+    }
+    IEnumerator StarTheTimerTicker5()
+    {
+        while (StopTimer5 == false)
+        {
+            sliderTiemr5 -= Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if (sliderTiemr5 <= 0)
+            {
+                StopTimer5 = true; //Timer is over
+
+            }
+            if (StopTimer5 == false)
+            {
+                timerSlider5.value = sliderTiemr5; //Timer is running
+            }
+        }
+    }
+
+    IEnumerator addsOneRover()
+    {
+        yield return new WaitForSeconds(42);
+        AddPeople(2);
+        rovers += 1;
+        updateRoverUI(rovers);
+
+
+    }
+
+
+    #endregion
+    //TERMINA ROVERS
     #endregion
 
     //  QUITA RECURSOS
@@ -201,11 +417,7 @@ public class GameManager : MonoBehaviour
         energy -= amount;
         updateEnergyUI(energy, maxEnergy);
     }
-    public void ExpendRovers(int amount)
-    {
-        rovers -= amount;
-        
-    }
+    
 
     public void notEnoughResourcesApagado()  // DESACTIVA EL POP UP DE RECURSOS
     {
