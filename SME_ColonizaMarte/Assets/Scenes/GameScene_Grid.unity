@@ -1874,6 +1874,7 @@ MonoBehaviour:
   defeatPanel: {fileID: 192518680}
   vitoryPanel: {fileID: 747730048}
   NotEnoughResourcesPopUp: {fileID: 1051387184}
+  firstDropPanel: {fileID: 939936867}
   moon: 0
   moonText: {fileID: 2090530969}
   PeopleSlider: {fileID: 1189656851}

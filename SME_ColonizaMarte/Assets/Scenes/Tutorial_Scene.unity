@@ -2423,6 +2423,21 @@ MonoBehaviour:
   maxEnergyAmount: 200
   RoversCurrentUI: {fileID: 2133770505}
   currentRoversAmount: 0
+  timerSlider1: {fileID: 1309586595}
+  sliderTiemr1: 42
+  StopTimer1: 0
+  timerSlider2: {fileID: 1843373890}
+  sliderTiemr2: 42
+  StopTimer2: 0
+  timerSlider3: {fileID: 1585548710}
+  sliderTiemr3: 42
+  StopTimer3: 0
+  timerSlider4: {fileID: 1797173526}
+  sliderTiemr4: 42
+  StopTimer4: 0
+  timerSlider5: {fileID: 1694852623}
+  sliderTiemr5: 42
+  StopTimer5: 0
 --- !u!1 &312050407
 GameObject:
   m_ObjectHideFlags: 0

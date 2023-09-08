@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject defeatPanel;
     public GameObject vitoryPanel;
     public GameObject NotEnoughResourcesPopUp;
+    public GameObject firstDropPanel;
 
 
     public static int maxPeople = 0;
@@ -435,7 +436,7 @@ public class GameManager : MonoBehaviour
             SetTimerText();
             timerText.color = Color.red;
             enabled = false;
-
+            firstDropPanel.SetActive(false);
 
         }
         SetTimerText();
