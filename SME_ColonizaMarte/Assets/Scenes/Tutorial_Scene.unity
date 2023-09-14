@@ -2431,11 +2431,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 303546595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3696a039abf64e40ae71ee29badb93d, type: 3}
+  m_Script: {fileID: 11500000, guid: fbe75b3a13d80e241a1c6ef3335a17ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 352439879}
-  currentTime: 12
+  currentTime: 0
   timerLimit: 0
   defeatPanel: {fileID: 192518680}
   vitoryPanel: {fileID: 747730048}
@@ -2446,34 +2446,34 @@ MonoBehaviour:
   PeopleSlider: {fileID: 1189656851}
   PeopleMaxUI: {fileID: 1328573591}
   PeopleCurrentUI: {fileID: 23790790}
-  currentPeopleAmount: 0
+  currentPeopleAmount: 10
   maxPeopleAmount: 200
   FoodSlider: {fileID: 2021853620}
   FoodMaxUI: {fileID: 887366687}
   FoodCurrentUI: {fileID: 1418351423}
-  currentFoodAmount: 0
+  currentFoodAmount: 10
   maxFoodAmount: 200
   EnergySlider: {fileID: 1557623534}
   EnergyMaxUI: {fileID: 146565568}
   EnergyCurrentUI: {fileID: 1933868328}
-  currentEnergyAmount: 0
+  currentEnergyAmount: 10
   maxEnergyAmount: 200
   RoversCurrentUI: {fileID: 2133770505}
   currentRoversAmount: 0
   timerSlider1: {fileID: 1309586595}
-  sliderTiemr1: 42
+  sliderTiemr1: 0
   StopTimer1: 0
   timerSlider2: {fileID: 1843373890}
-  sliderTiemr2: 42
+  sliderTiemr2: 0
   StopTimer2: 0
   timerSlider3: {fileID: 1585548710}
-  sliderTiemr3: 42
+  sliderTiemr3: 0
   StopTimer3: 0
   timerSlider4: {fileID: 1797173526}
-  sliderTiemr4: 42
+  sliderTiemr4: 0
   StopTimer4: 0
   timerSlider5: {fileID: 1694852623}
-  sliderTiemr5: 42
+  sliderTiemr5: 0
   StopTimer5: 0
   resourcesHaveDroped: 0
 --- !u!1 &312050407
@@ -8638,7 +8638,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 303546597}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: AddRovers
         m_Mode: 1

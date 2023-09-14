@@ -69,9 +69,14 @@ public class AnimCohete : MonoBehaviour
     private bool isDescending = true; // Indica si está descendiendo
     private bool isStatic = false; // Indica si está en estado estático
 
+    public GameObject Rocket;
+
+
     private void Start()
     {
         initialPosition = transform.position;
+        
+
     }
 
     private void Update()
@@ -81,6 +86,7 @@ public class AnimCohete : MonoBehaviour
             // Calcula el desplazamiento en esta actualización
             float displacement = descendSpeed * Time.deltaTime;
             float newY = Mathf.Max(transform.position.y - displacement, 0f);
+            
 
             // Actualiza la posición
             transform.position = new Vector3(transform.position.x, newY, transform.position.z);
@@ -101,7 +107,7 @@ public class AnimCohete : MonoBehaviour
             if (Time.time - staticTimer >= staticDuration)
             {
                 isStatic = false;
-
+                
                 // Comienza a ascender con aceleración
                 descendSpeed = 0.0f; // Detiene cualquier movimiento descendente
             }
@@ -117,6 +123,7 @@ public class AnimCohete : MonoBehaviour
 
             // Actualiza la posición
             transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+            
         }
     }
 }

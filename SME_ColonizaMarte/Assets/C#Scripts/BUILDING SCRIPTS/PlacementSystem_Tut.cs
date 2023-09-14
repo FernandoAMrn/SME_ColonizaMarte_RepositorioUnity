@@ -118,14 +118,14 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
             return;
         }
 
-        if (GameManager.people >= 0 && GameManager.energy >= 0) //CHECA SI TIENE SUFICIENTES RECURSOS
+        if (GameManager_Tut.people >= 0 && GameManager_Tut.energy >= 0) //CHECA SI TIENE SUFICIENTES RECURSOS
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(dormitorios);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-            GameManager.Instance.ExpendPeople(4); // TO DO REGRESAR RECURSO DE PERSONAS CUANDO SE ACABE LA CONSTRUCCION
-            GameManager.Instance.ExpendEnergy(3);
+            GameManager_Tut.Instance.ExpendPeople(4); // TO DO REGRESAR RECURSO DE PERSONAS CUANDO SE ACABE LA CONSTRUCCION
+            GameManager_Tut.Instance.ExpendEnergy(3);
 
             NextPanel.SetActive(true);
         }
@@ -141,14 +141,14 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
         {
             return;
         }
-        if (GameManager.people >= 0 && GameManager.energy >=0)
+        if (GameManager_Tut.people >= 0 && GameManager_Tut.energy >=0)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(EstacionDeAgua);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-            GameManager.Instance.ExpendPeople(2);
-            GameManager.Instance.ExpendEnergy(2);
+            GameManager_Tut.Instance.ExpendPeople(2);
+            GameManager_Tut.Instance.ExpendEnergy(2);
             NextPanel.SetActive(true);
         }
        
@@ -161,13 +161,13 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
         {
             return;
         }
-        if (GameManager.people >= 0)
+        if (GameManager_Tut.people >= 0)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(EstacionDeEnergia);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);  
-            GameManager.Instance.ExpendPeople(3);
+            GameManager_Tut.Instance.ExpendPeople(3);
             NextPanel.SetActive(true);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
@@ -183,14 +183,14 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
         {
             return;
         }
-        if (GameManager.people >=0 && GameManager.energy >= 0)
+        if (GameManager_Tut.people >=0 && GameManager_Tut.energy >= 0)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(Invernadero);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-            GameManager.Instance.ExpendPeople(3);
-            GameManager.Instance.ExpendEnergy(3);
+            GameManager_Tut.Instance.ExpendPeople(3);
+            GameManager_Tut.Instance.ExpendEnergy(3);
             NextPanel.SetActive(true);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
@@ -207,14 +207,14 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
             return;
         }
 
-        if (GameManager.people >=0 && GameManager.energy >= 0)
+        if (GameManager_Tut.people >=0 && GameManager_Tut.energy >= 0)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(Laboratorio);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-            GameManager.Instance.ExpendPeople(4);
-            GameManager.Instance.ExpendEnergy(4);
+            GameManager_Tut.Instance.ExpendPeople(4);
+            GameManager_Tut.Instance.ExpendEnergy(4);
             NextPanel.SetActive(true);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
@@ -231,14 +231,14 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
         {
             return;
         }
-        if (GameManager.people >= 0 && GameManager.energy >=0)
+        if (GameManager_Tut.people >= 0 && GameManager_Tut.energy >=0)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(Taller);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-            GameManager.Instance.ExpendPeople(4);
-            GameManager.Instance.ExpendEnergy(2);
+            GameManager_Tut.Instance.ExpendPeople(4);
+            GameManager_Tut.Instance.ExpendEnergy(2);
             NextPanel.SetActive(true);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
