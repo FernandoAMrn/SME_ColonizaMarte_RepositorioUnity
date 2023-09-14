@@ -9,8 +9,8 @@ public class Laboratorio : MonoBehaviour
     /// <summary>
     /// Duplica la produccion de la estacion de energia más recientemente construida
     /// 
-    /// Costo: 4 personas, 10 energia
-    /// Tiempo: 1 luna
+    /// Costo: 7 personas, 10 energia
+    /// Tiempo: 2 lunas
     /// </summary>
     /// 
 
@@ -49,7 +49,7 @@ public class Laboratorio : MonoBehaviour
                 sliderParaOcultar.SetActive(false);
                 VFX.SetActive(true);
                 increaseFoodGen();
-                GameManager.Instance.AddPeople(4);
+                GameManager.Instance.AddPeople(7);
 
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system

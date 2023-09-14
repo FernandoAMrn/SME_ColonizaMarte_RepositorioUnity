@@ -2440,7 +2440,7 @@ MonoBehaviour:
   defeatPanel: {fileID: 192518680}
   vitoryPanel: {fileID: 747730048}
   NotEnoughResourcesPopUp: {fileID: 1051387184}
-  firstDropPanel: {fileID: 0}
+  firstDropPanel: {fileID: 939936867}
   moon: 0
   moonText: {fileID: 2090530969}
   PeopleSlider: {fileID: 1189656851}
@@ -2475,6 +2475,7 @@ MonoBehaviour:
   timerSlider5: {fileID: 1694852623}
   sliderTiemr5: 42
   StopTimer5: 0
+  resourcesHaveDroped: 0
 --- !u!1 &312050407
 GameObject:
   m_ObjectHideFlags: 0
@@ -4795,7 +4796,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6d1c02a1917471e438838927be2e5fec, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0abbfcf7f0c0ea441a21fd98cf8e64ba, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
@@ -14743,7 +14744,7 @@ RectTransform:
   m_GameObject: {fileID: 1799030196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7811883, y: 0.8332675, z: 0.8332675}
+  m_LocalScale: {x: 0.68646926, y: 0.8332675, z: 0.8332675}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1872868361}

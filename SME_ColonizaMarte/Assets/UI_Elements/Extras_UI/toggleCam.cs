@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class toggleCam : MonoBehaviour
 {
+
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
     public Camera cam_Dormitorios;
     public Camera cam_Agua;
     public Camera cam_Energia;

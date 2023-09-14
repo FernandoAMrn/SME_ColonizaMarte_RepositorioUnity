@@ -355,7 +355,7 @@ MonoBehaviour:
   timerSlider: {fileID: 6087571674618944157}
   sliderParaOcultar: {fileID: 3992639110219412986}
   VFX: {fileID: 5596715238869995179}
-  sliderTimer: 42
+  sliderTimer: 100
   stopTimer: 0
 --- !u!1 &7852014951371141498
 GameObject:

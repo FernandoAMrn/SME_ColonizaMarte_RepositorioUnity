@@ -193,13 +193,13 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
         {
             return;
         }
-        if (GameManager.people >=3 && GameManager.energy >= 3)
+        if (GameManager.people >=4 && GameManager.energy >= 3)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(Invernadero);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-            GameManager.Instance.ExpendPeople(3);
+            GameManager.Instance.ExpendPeople(4);
             GameManager.Instance.ExpendEnergy(3);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
@@ -221,13 +221,13 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
             return;
         }
 
-        if (GameManager.people >=4 && GameManager.energy >= 10)
+        if (GameManager.people >=7 && GameManager.energy >= 10)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(Laboratorio);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-            GameManager.Instance.ExpendPeople(4);
+            GameManager.Instance.ExpendPeople(7);
             GameManager.Instance.ExpendEnergy(10);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
@@ -254,8 +254,8 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(Taller);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-            GameManager.Instance.ExpendPeople(4);
-            GameManager.Instance.ExpendEnergy(2);
+            GameManager.Instance.ExpendPeople(7);
+            GameManager.Instance.ExpendEnergy(5);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }

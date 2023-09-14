@@ -431,7 +431,7 @@ MonoBehaviour:
   timerSlider: {fileID: 407903812960278078}
   sliderParaOcultar: {fileID: 3253797354934281178}
   VFX: {fileID: 8525514164543588900}
-  sliderTimer: 42
+  sliderTimer: 100
   stopTimer: 0
 --- !u!1001 &1521212345526936530
 PrefabInstance:

@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class AudioBTTNS : MonoBehaviour
 {
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
     public AudioSource audioManager;
     public AudioClip Accept, Click, Denied, Construccion,  Countdown;
 

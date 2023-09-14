@@ -11,8 +11,8 @@ public class EstacionDeEnergia : MonoBehaviour
     ///<summary>
     /// +1 de energia cada luna
     /// 
-    /// Tiempo de construccion: 2 lunas
-    /// 
+    /// Tiempo de construccion: 1 luna y media
+    /// v
     /// Costo 4 personas
     /// </summary>
 

@@ -9,7 +9,9 @@ public class Invernadero : MonoBehaviour
     /// <summary>
     ///  +5 de comida cada luna
     ///  
-    /// Tiempo de construccion: 3 lunas
+    /// Tiempo de construccion: 2 lunas
+    /// 
+    /// Costo: 4 personas 3 energia
     /// </summary>
     /// 
 
@@ -65,7 +67,7 @@ public class Invernadero : MonoBehaviour
                 panelDeComida.SetActive(true);
                 FoodVFX.SetActive(true);
                 StartCoroutine(GenInvernadero());
-                GameManager.Instance.AddPeople(3);
+                GameManager.Instance.AddPeople(4);
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
 

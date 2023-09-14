@@ -75,7 +75,7 @@ public class TimeManager : MonoBehaviour
                 {
                     VictoryPanel.SetActive(true);
                 }
-                else
+                if (GameManager.energy <= 99 && GameManager.food <= 99 && GameManager.maxPeople <= 99)
                 {
                     DefeatPanel.SetActive(true);
                 }

@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject firstDropPanel;
 
 
-    public static int maxPeople = 0;
+    public static int maxPeople = 20;
     public static int people = 0;
 
     public static int maxFood = 100;
@@ -86,13 +86,16 @@ public class GameManager : MonoBehaviour
     public float sliderTiemr5;
     public bool StopTimer5 = false;
 
+    public bool resourcesHaveDroped = false;
+
     public static GameManager Instance; // SINGLETON
 
     private void Awake()
     {
         Instance = this;
         StartCoroutine(InitialDrop());
-
+        resourcesHaveDroped = false;
+        defeatPanel.SetActive(false);
         
     }
     private void Start()
@@ -116,6 +119,8 @@ public class GameManager : MonoBehaviour
 
         timerSlider5.maxValue = sliderTiemr5;
         timerSlider5.value = sliderTiemr5;
+
+
 
     }
    
@@ -379,7 +384,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator addsOneRover()
     {
-        yield return new WaitForSeconds(42);
+        yield return new WaitForSeconds(80);
         AddPeople(2);
         rovers += 1;
         updateRoverUI(rovers);
@@ -448,6 +453,20 @@ public class GameManager : MonoBehaviour
         {
             defeatPanel.SetActive(false);
         }
+        if (resourcesHaveDroped == true && food <= 0)
+        {
+            defeatPanel.SetActive(true);
+        }
+
+        if (food >= maxFood)
+        {
+            food = maxFood;
+        }
+        if (energy >= maxEnergy)
+        {
+            energy = maxEnergy;
+        }
+
     }
 
     private void SetTimerText()
@@ -459,9 +478,9 @@ public class GameManager : MonoBehaviour
     IEnumerator InitialDrop()
     {
         yield return new WaitForSeconds(12);
-        AddPeople(16);
-        AddFood(60);
-
+        AddPeople(20);
+        AddFood(80);
+        resourcesHaveDroped = true;
         StartCoroutine(ConsumeFood());
     }
 
