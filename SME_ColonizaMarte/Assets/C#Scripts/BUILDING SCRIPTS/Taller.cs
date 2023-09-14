@@ -10,7 +10,7 @@ public class Taller : MonoBehaviour
     /// duplica la produccion de la estacion de energia más receientemente construida. 
     /// Tempo de construccion 1 luna
     /// 
-    /// 
+    /// Costo: 7 personas 5 energia
     /// </summary>
     /// 
 
@@ -50,7 +50,7 @@ public class Taller : MonoBehaviour
                 sliderParaOcultar.SetActive(false);
                 VFX.SetActive(true);
                 increaseGen();
-                GameManager.Instance.AddPeople(4);
+                GameManager.Instance.AddPeople(7);
                 
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system

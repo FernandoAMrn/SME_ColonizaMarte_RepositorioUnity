@@ -33,7 +33,7 @@ public class Hospital : MonoBehaviour
 
     private void ChecaPacientes()
     {
-        if (GameManager.people > GameManager.food)
+        if (GameManager.food <= 0)
         {
             GameManager.Instance.ExpendPeople(3);
             StartCoroutine(DevuelvePersonas());

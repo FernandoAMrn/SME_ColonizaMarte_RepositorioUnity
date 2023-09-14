@@ -20,6 +20,7 @@ public class InputSystem : MonoBehaviour       // MOVIMIENTO DE LA CAMARA
 
     public Vector3 dragStartPosition;
     public Vector3 dragCurrentPosition;
+    
     //End MOVEMENT FIELDS
 
 
@@ -38,7 +39,11 @@ public class InputSystem : MonoBehaviour       // MOVIMIENTO DE LA CAMARA
         HandleMouseInput();
         CameraMovementInput();
 
-       
+        newPosition.x = Mathf.Clamp(newPosition.x, -10f, 10f);
+        newPosition.z = Mathf.Clamp(newPosition.z, -7f, 7f);
+
+        newZoom.y = Mathf.Clamp(newZoom.y, 4f, 11f);
+
     }
 
     void HandleMouseInput()

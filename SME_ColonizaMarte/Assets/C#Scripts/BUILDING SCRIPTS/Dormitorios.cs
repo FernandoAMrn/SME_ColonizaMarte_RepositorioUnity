@@ -12,6 +12,7 @@ public class Dormitorios : MonoBehaviour
     ///  RESGUARDA A LOS HABITANTES MAX 20 EL JUGADOR NECESITARA CONSTRUIR 5 DE ESTOS PARA RECIBIR A TODAS LAS DEMAS PERSONAS
     ///  
     /// Tiempo de construccion: 2 Lunas
+    /// Costo : 4 personas 6 energia
     /// </summary>
 {
     public Slider timerSlider;
@@ -45,6 +46,7 @@ public class Dormitorios : MonoBehaviour
             {
                 stopTimer = true; //Timer is over
                 SliderParaOcultar.SetActive(false);
+                GameManager.Instance.AddPeople(4);
                 addMaxPeople();
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system

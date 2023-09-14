@@ -7,9 +7,9 @@ using TMPro;
 public class EstacionDeAgua : MonoBehaviour
 {
     /// <summary>
-    /// +1 de comida cada luna
+    /// +2 de comida cada media luna
     /// 
-    /// tiempo de construccion: 1 luna
+    /// tiempo de construccion: media  luna
     /// </summary>
     /// 
     public Slider timerSlider;
@@ -70,7 +70,7 @@ public class EstacionDeAgua : MonoBehaviour
 
     IEnumerator GenAgua()
     {
-        yield return new WaitForSeconds(42);
+        yield return new WaitForSeconds(21);
         GameManager.Instance.AddFood(foodAmount);
         StartCoroutine(GenAgua());
     }

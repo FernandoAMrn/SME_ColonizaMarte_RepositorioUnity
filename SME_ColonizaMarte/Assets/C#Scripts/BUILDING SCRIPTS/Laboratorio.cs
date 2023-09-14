@@ -8,6 +8,9 @@ public class Laboratorio : MonoBehaviour
 {
     /// <summary>
     /// Duplica la produccion de la estacion de energia más recientemente construida
+    /// 
+    /// Costo: 4 personas, 10 energia
+    /// Tiempo: 1 luna
     /// </summary>
     /// 
 

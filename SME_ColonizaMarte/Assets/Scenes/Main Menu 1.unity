@@ -5513,7 +5513,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
-  rotationSpeed: 50
+  minRotationInterval: 2
+  maxRotationInterval: 10
   minX: -10
   maxX: 10
   minZ: -0.5
@@ -5822,7 +5823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3fc9fdfae501c0418a2cbef289512ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -130
+      value: -126
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3fc9fdfae501c0418a2cbef289512ca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5830,7 +5831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3fc9fdfae501c0418a2cbef289512ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1878
+      value: 1979
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3fc9fdfae501c0418a2cbef289512ca, type: 3}
       propertyPath: m_LocalRotation.w

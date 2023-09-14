@@ -12,6 +12,8 @@ public class EstacionDeEnergia : MonoBehaviour
     /// +1 de energia cada luna
     /// 
     /// Tiempo de construccion: 2 lunas
+    /// 
+    /// Costo 4 personas
     /// </summary>
 
 {
@@ -71,7 +73,7 @@ public class EstacionDeEnergia : MonoBehaviour
                 panelDeEnergia.SetActive(true);
                 energyVFX.SetActive(true);
                 StartCoroutine(energyGen());
-                GameManager.Instance.AddPeople(3);
+                GameManager.Instance.AddPeople(5);
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
 

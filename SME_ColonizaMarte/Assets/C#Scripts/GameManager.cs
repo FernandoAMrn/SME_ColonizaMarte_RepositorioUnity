@@ -459,7 +459,7 @@ public class GameManager : MonoBehaviour
     IEnumerator InitialDrop()
     {
         yield return new WaitForSeconds(12);
-        AddPeople(20);
+        AddPeople(16);
         AddFood(60);
 
         StartCoroutine(ConsumeFood());

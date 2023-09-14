@@ -7,7 +7,7 @@ using TMPro;
 public class Invernadero : MonoBehaviour
 {
     /// <summary>
-    ///  +2 de comida cada luna
+    ///  +5 de comida cada luna
     ///  
     /// Tiempo de construccion: 3 lunas
     /// </summary>
@@ -41,7 +41,7 @@ public class Invernadero : MonoBehaviour
         timerSlider.value = sliderTimer;
         StartTimer();
 
-        foodAmount = 4;
+        foodAmount = 5;
 
         foodAmountText.text = foodAmount.ToString();
     }

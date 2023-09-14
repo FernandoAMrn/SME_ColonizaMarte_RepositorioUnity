@@ -117,14 +117,14 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
             return;
         }
 
-        if (GameManager.people >= 4 && GameManager.energy >= 3) //CHECA SI TIENE SUFICIENTES RECURSOS
+        if (GameManager.people >= 4 && GameManager.energy >= 6) //CHECA SI TIENE SUFICIENTES RECURSOS
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(dormitorios);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
             GameManager.Instance.ExpendPeople(4); // TO DO REGRESAR RECURSO DE PERSONAS CUANDO SE ACABE LA CONSTRUCCION
-            GameManager.Instance.ExpendEnergy(3);
+            GameManager.Instance.ExpendEnergy(6);
         }
         
         else // ENVIA POP UP DE QUE FALTAN RECURSOS
@@ -167,13 +167,13 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
         {
             return;
         }
-        if (GameManager.people >= 3)
+        if (GameManager.people >= 5)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(EstacionDeEnergia);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);  
-            GameManager.Instance.ExpendPeople(3);
+            GameManager.Instance.ExpendPeople(5);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }
@@ -221,14 +221,14 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
             return;
         }
 
-        if (GameManager.people >=4 && GameManager.energy >= 4)
+        if (GameManager.people >=4 && GameManager.energy >= 10)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(Laboratorio);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
             GameManager.Instance.ExpendPeople(4);
-            GameManager.Instance.ExpendEnergy(4);
+            GameManager.Instance.ExpendEnergy(10);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }
@@ -248,7 +248,7 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
         {
             return;
         }
-        if (GameManager.people >= 4 && GameManager.energy >=3)
+        if (GameManager.people >= 7 && GameManager.energy >=5)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
