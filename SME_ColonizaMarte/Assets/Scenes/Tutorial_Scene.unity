@@ -4615,6 +4615,7 @@ MonoBehaviour:
   descendSpeed: 1000
   staticDuration: 2
   ascendAcceleration: 1
+  Rocket: {fileID: 0}
 --- !u!4 &557131192 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8989836353409951274, guid: 12cee114df497934d82b60f08b632646, type: 3}
@@ -10867,6 +10868,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287413651}
   m_CullTransparentMesh: 1
+--- !u!1 &1291378076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2299377665557817527, guid: de9c2b10629203a43af54b09ba834bd7, type: 3}
+  m_PrefabInstance: {fileID: 2072240978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1293726218
 GameObject:
   m_ObjectHideFlags: 0
@@ -10967,6 +10973,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: AudioBTTNS, Assembly-CSharp
         m_MethodName: ClickBTTN
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 121614993}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12539,7 +12557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numeroDePacientesUI: {fileID: 1361232989}
   numeroDePacientes: 0
-  healingVFX: {fileID: 0}
+  healingVFX: {fileID: 1291378076}
 --- !u!1 &1558335113
 GameObject:
   m_ObjectHideFlags: 0
@@ -15504,6 +15522,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 121614993}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &1925679525
 GameObject:

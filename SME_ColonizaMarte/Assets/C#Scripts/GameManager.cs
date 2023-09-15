@@ -92,7 +92,15 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
         StartCoroutine(InitialDrop());
         resourcesHaveDroped = false;
         defeatPanel.SetActive(false);
@@ -103,7 +111,7 @@ public class GameManager : MonoBehaviour
         moon = 28;
         updateMoonUI();
 
-        Time.timeScale = 0;
+        
 
         timerSlider1.maxValue = sliderTiemr1;
         timerSlider1.value = sliderTiemr1;
@@ -119,8 +127,6 @@ public class GameManager : MonoBehaviour
 
         timerSlider5.maxValue = sliderTiemr5;
         timerSlider5.value = sliderTiemr5;
-
-
 
     }
    
@@ -458,13 +464,9 @@ public class GameManager : MonoBehaviour
             defeatPanel.SetActive(true);
         }
 
-        if (food >= maxFood)
+        if (food <= -1)
         {
-            food = maxFood;
-        }
-        if (energy >= maxEnergy)
-        {
-            energy = maxEnergy;
+            defeatPanel.SetActive(true);
         }
 
     }
