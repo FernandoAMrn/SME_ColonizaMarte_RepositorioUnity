@@ -17,6 +17,7 @@ public class Laboratorio : MonoBehaviour
     public Slider timerSlider;
     public GameObject sliderParaOcultar;
     public GameObject VFX;
+    public GameObject panelRecursos;
 
     public float sliderTimer;
 
@@ -47,9 +48,13 @@ public class Laboratorio : MonoBehaviour
             {
                 stopTimer = true; //Timer is over
                 sliderParaOcultar.SetActive(false);
+                panelRecursos.SetActive(true);
                 VFX.SetActive(true);
                 increaseFoodGen();
-                GameManager.Instance.AddPeople(7);
+                StartCoroutine(dailyEnergyExpenditure());
+                GameManager.Instance.dailyEnergyNumber(6);
+                GameManager.Instance.incresBuildingNumberCount(1);
+                GameManager.Instance.AddPeople(10);
 
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
@@ -65,8 +70,13 @@ public class Laboratorio : MonoBehaviour
 
     public void increaseFoodGen()
     {
-        Invernadero.Instance.increaseFoodAmount();
+        EstacionDeAgua.Instance.increaseFoodAmount();
     }
 
-    
+    IEnumerator dailyEnergyExpenditure()
+    {
+        yield return new WaitForSeconds(42);
+        GameManager.Instance.ExpendEnergy(4);
+        StartCoroutine(dailyEnergyExpenditure());
+    }    
 }

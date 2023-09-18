@@ -24,6 +24,12 @@ public class EstacionDeAgua : MonoBehaviour
 
     public int foodAmount;
     public TextMeshProUGUI foodAmountText;
+    public static EstacionDeAgua Instance;
+
+    public void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +61,11 @@ public class EstacionDeAgua : MonoBehaviour
                 panelAmount.SetActive(true);
                 VFX.SetActive(true);
                 StartCoroutine(GenAgua());
+                StartCoroutine(dailyEnergyExpend());
                 GameManager.Instance.AddPeople(2);
+                GameManager.Instance.dailyEnergyNumber(2);
+                GameManager.Instance.incresBuildingNumberCount(1);
+                GameManager.Instance.TotalDailyFoodProdduction(foodAmount);
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
 
@@ -73,6 +83,21 @@ public class EstacionDeAgua : MonoBehaviour
         yield return new WaitForSeconds(21);
         GameManager.Instance.AddFood(foodAmount);
         StartCoroutine(GenAgua());
+    }
+
+  
+    public void increaseFoodAmount()
+    {
+        foodAmount *= 2;
+        foodAmountText.text = foodAmount.ToString();
+    }
+    IEnumerator dailyEnergyExpend()
+    {
+        yield return new WaitForSeconds(42);
+        GameManager.Instance.ExpendEnergy(2);
+        
+        StartCoroutine(dailyEnergyExpend());
+
     }
 
     public void updateNumberUI()

@@ -39,8 +39,9 @@ public class TimeManager : MonoBehaviour
     public GameObject VictoryPanel;
     public GameObject DefeatPanel;
 
+    
 
-
+    
 
     private void Start()
     {
@@ -53,7 +54,7 @@ public class TimeManager : MonoBehaviour
         timerSlider.maxValue = sliderTimer;
         timerSlider.value = sliderTimer;
         StartTimer();
-       
+        
     }
 
     private void StartTimer()
@@ -73,11 +74,11 @@ public class TimeManager : MonoBehaviour
                 stopTimer = true; //SE ACABO EL TIEMPO
                 if (GameManager.energy >= 100 && GameManager.food >= 100 && GameManager.maxPeople >= 100)
                 {
-                    VictoryPanel.SetActive(true);
+                    VictoryPanel.SetActive(true); //VICTORIA DEL JUEGO
                 }
-                if (GameManager.energy <= 99 && GameManager.food <= 99 && GameManager.maxPeople <= 99)
+                else
                 {
-                    DefeatPanel.SetActive(true);
+                    DefeatPanel.SetActive(true); //DERROTA DEL JUEGO
                 }
             }
 
@@ -94,10 +95,36 @@ public class TimeManager : MonoBehaviour
     {
         updateTimeOfDay();
         RotateSun();
-        if (GameManager.energy >= 100 && GameManager.food >= 100 && GameManager.maxPeople >= 100)
+        if (GameManager.energy >= 100 && GameManager.food >= 200 && GameManager.maxPeople >= 200)
         {
             VictoryPanel.SetActive(true);
         }
+
+        if (GameManager.food <= -1 || GameManager.energy <= -1)
+        {
+            DefeatPanel.SetActive(true);
+        }
+
+        if (GameManager.energy >= 200)
+        {
+            GameManager.energy = 200;
+        }
+
+        if (GameManager.food >= 200)
+        {
+            GameManager.food = 200;
+        }
+
+        if (GameManager.Instance.BuildingCount >= 20)
+        {
+            GameManager.Instance.IncreaseFoodCons();
+        }
+
+        if (GameManager.Instance.BuildingCount >= 30)
+        {
+            GameManager.Instance.IncreaseFoodCons2();
+        }
+
     }
 
     // METODOS DE SISTEMA DE DIA Y NOCHE
@@ -148,5 +175,8 @@ public class TimeManager : MonoBehaviour
         }
         return difference;
     }
+
+    
+    
     #endregion
 }

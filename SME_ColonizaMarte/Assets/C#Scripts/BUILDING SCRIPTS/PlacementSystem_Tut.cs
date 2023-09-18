@@ -31,6 +31,7 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
 
     public GameObject NotEnoughResourcesPopUp;
     public GameObject NextPanel;
+    public GameObject previousPanel;
     
 
     [SerializeField]
@@ -126,6 +127,7 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
             GameManager_Tut.Instance.ExpendPeople(4); // TO DO REGRESAR RECURSO DE PERSONAS CUANDO SE ACABE LA CONSTRUCCION
             GameManager_Tut.Instance.ExpendEnergy(3);
+            previousPanel.SetActive(false);
 
             NextPanel.SetActive(true);
         }
@@ -150,6 +152,7 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
             GameManager_Tut.Instance.ExpendPeople(2);
             GameManager_Tut.Instance.ExpendEnergy(2);
             NextPanel.SetActive(true);
+            previousPanel.SetActive(false);
         }
        
 
@@ -169,6 +172,7 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);  
             GameManager_Tut.Instance.ExpendPeople(3);
             NextPanel.SetActive(true);
+            previousPanel.SetActive(false);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }
@@ -192,6 +196,7 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
             GameManager_Tut.Instance.ExpendPeople(3);
             GameManager_Tut.Instance.ExpendEnergy(3);
             NextPanel.SetActive(true);
+            previousPanel.SetActive(false);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }
@@ -216,6 +221,7 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
             GameManager_Tut.Instance.ExpendPeople(4);
             GameManager_Tut.Instance.ExpendEnergy(4);
             NextPanel.SetActive(true);
+            previousPanel.SetActive(false);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }
@@ -240,6 +246,7 @@ public class PlacementSystem_Tut : MonoBehaviour         // SISTEMA PARA INSTANC
             GameManager_Tut.Instance.ExpendPeople(4);
             GameManager_Tut.Instance.ExpendEnergy(2);
             NextPanel.SetActive(true);
+            previousPanel.SetActive(false);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }

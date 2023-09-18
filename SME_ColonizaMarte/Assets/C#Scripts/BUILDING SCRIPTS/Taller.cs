@@ -49,8 +49,9 @@ public class Taller : MonoBehaviour
                 stopTimer = true; //Timer is over
                 sliderParaOcultar.SetActive(false);
                 VFX.SetActive(true);
+                GameManager.Instance.incresBuildingNumberCount(1);
                 increaseGen();
-                GameManager.Instance.AddPeople(7);
+                GameManager.Instance.AddPeople(10);
                 
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system

@@ -17,6 +17,7 @@ public class Dormitorios : MonoBehaviour
 {
     public Slider timerSlider;
     public GameObject SliderParaOcultar;
+    public GameObject energyExpendPanel;
 
     public float sliderTimer;
 
@@ -46,8 +47,12 @@ public class Dormitorios : MonoBehaviour
             {
                 stopTimer = true; //Timer is over
                 SliderParaOcultar.SetActive(false);
+                energyExpendPanel.SetActive(true);
                 GameManager.Instance.AddPeople(4);
+                GameManager.Instance.incresBuildingNumberCount(1);
                 addMaxPeople();
+                StartCoroutine(dailyEnergyExpenditure());
+                GameManager.Instance.dailyEnergyNumber(6); // Info de consumo diario de energia
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
 
@@ -65,5 +70,11 @@ public class Dormitorios : MonoBehaviour
         GameManager.Instance.AddMaxPeople(20);
     }
 
+    IEnumerator dailyEnergyExpenditure()
+    {
+        yield return new WaitForSeconds(42);
+        GameManager.Instance.ExpendEnergy(5);
+        StartCoroutine(dailyEnergyExpenditure());
+    }
    
 }

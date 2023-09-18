@@ -22,11 +22,11 @@ public class GameManager : MonoBehaviour
     public static int maxPeople = 20;
     public static int people = 0;
 
-    public static int maxFood = 100;
+    public static int maxFood = 200;
     public static int food = 0;
 
 
-    public static int maxEnergy = 100;
+    public static int maxEnergy = 200;
     public static int energy = 0;
 
     public static int rovers = 0;
@@ -52,6 +52,14 @@ public class GameManager : MonoBehaviour
     public int currentFoodAmount = ManagerRecursos.food;
     public int maxFoodAmount = ManagerRecursos.maxFood;
 
+    public int dailyFoodProdduction;
+    public int dailyFoodConsumption;
+
+    public Slider dailyFoodProducction_Slider;
+    public TextMeshProUGUI dailyFoodProducction_Text;
+    public TextMeshProUGUI dailyFoodConsumption_Text;
+    public int BuildingCount;
+    public TextMeshProUGUI buildingCount_Text;
 
     // ENERGY UI
     public Slider EnergySlider;
@@ -60,6 +68,14 @@ public class GameManager : MonoBehaviour
 
     public int currentEnergyAmount = ManagerRecursos.energy;
     public int maxEnergyAmount = ManagerRecursos.maxEnergy;
+    public int dailyenergyExpenditure;
+    public int dailyEnergyProduction;
+
+    public TextMeshProUGUI energyExpenditure_Text;
+    public TextMeshProUGUI dailyEnergyProducction_Text;
+
+    public Slider dailyEnergyExpenditure_Sldier;
+    public Slider dailyEnergyProdduction_Slider;
 
     // ROVERS UI
     public TextMeshProUGUI RoversCurrentUI;
@@ -68,6 +84,14 @@ public class GameManager : MonoBehaviour
     public Slider timerSlider1;
     public float sliderTiemr1;
     public bool StopTimer1 = false;
+
+
+    public GameObject roverButton1;
+    public GameObject roverButton2;
+    public GameObject roverButton3;
+    public GameObject roverButton4;
+    public GameObject roverButton5;
+    public GameObject roverButton6;
 
 
     public Slider timerSlider2;
@@ -86,23 +110,25 @@ public class GameManager : MonoBehaviour
     public float sliderTiemr5;
     public bool StopTimer5 = false;
 
-    public bool resourcesHaveDroped = false;
+    public int dailyRoverEnergy;
+    public TextMeshProUGUI roversEnergyCost;
 
     public static GameManager Instance; // SINGLETON
 
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null)
         {
-            Instance = this;
+            Destroy(gameObject);
+            
         }
         else
         {
-            Destroy(gameObject);
+            Instance = this;
+            
         }
         
-        StartCoroutine(InitialDrop());
-        resourcesHaveDroped = false;
+        
         defeatPanel.SetActive(false);
         
     }
@@ -111,7 +137,9 @@ public class GameManager : MonoBehaviour
         moon = 28;
         updateMoonUI();
 
-        
+        StartCoroutine(InitialDrop());
+        //StartCoroutine(increaseFoodConsumption2());
+        //StartCoroutine(increaseFoodConsumption1());
 
         timerSlider1.maxValue = sliderTiemr1;
         timerSlider1.value = sliderTiemr1;
@@ -128,6 +156,28 @@ public class GameManager : MonoBehaviour
         timerSlider5.maxValue = sliderTiemr5;
         timerSlider5.value = sliderTiemr5;
 
+        //ROVER INFO UI
+        dailyRoverEnergy = 0;
+        roversEnergyCost.text = dailyRoverEnergy.ToString();
+
+        dailyenergyExpenditure = 0;
+        energyExpenditure_Text.text = dailyenergyExpenditure.ToString();
+
+        dailyEnergyProduction = 0;
+        dailyEnergyProducction_Text.text = dailyEnergyProduction.ToString();
+
+        //FOOD INFO UI
+        dailyFoodProdduction = 0;
+        dailyFoodProducction_Slider.maxValue = maxFood;
+        dailyFoodProducction_Slider.value = dailyFoodProdduction;
+
+        dailyFoodProducction_Text.text = dailyFoodProdduction.ToString();
+
+        dailyFoodConsumption = 20;
+        dailyFoodConsumption_Text.text = dailyFoodConsumption.ToString();
+
+        BuildingCount = 0;
+        buildingCount_Text.text = BuildingCount.ToString();
     }
    
 
@@ -218,7 +268,7 @@ public class GameManager : MonoBehaviour
         {
             NotEnoughResourcesPopUp.SetActive(true);
             Invoke("notEnoughResourcesApagado", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
-
+            StartCoroutine(buttonActive1());
         }
 
 
@@ -237,7 +287,8 @@ public class GameManager : MonoBehaviour
         {
             NotEnoughResourcesPopUp.SetActive(true);
             Invoke("notEnoughResourcesApagado", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
-
+            roverButton2.SetActive(true);
+            roverButton3.SetActive(false);
         }
 
 
@@ -256,7 +307,8 @@ public class GameManager : MonoBehaviour
         {
             NotEnoughResourcesPopUp.SetActive(true);
             Invoke("notEnoughResourcesApagado", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
-
+            roverButton3.SetActive(true);
+            roverButton4.SetActive(false);
         }
     }
 
@@ -273,7 +325,8 @@ public class GameManager : MonoBehaviour
         {
             NotEnoughResourcesPopUp.SetActive(true);
             Invoke("notEnoughResourcesApagado", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
-
+            roverButton4.SetActive(true);
+            roverButton5.SetActive(false);
         }
     }
 
@@ -290,7 +343,7 @@ public class GameManager : MonoBehaviour
         {
             NotEnoughResourcesPopUp.SetActive(true);
             Invoke("notEnoughResourcesApagado", 1.5f); // APAGA EL POP UP DESPUES DE SEGUNDO Y MEDIO
-
+            roverButton5.SetActive(true);
         }
     }
 
@@ -304,7 +357,8 @@ public class GameManager : MonoBehaviour
             if (sliderTiemr1 <= 0)
             {
                 StopTimer1 = true; //Timer is over
-                
+                dailyRoverEnergy += 1;
+                roversEnergyCost.text = dailyRoverEnergy.ToString();
             }
             if (StopTimer1 == false)
             {
@@ -323,7 +377,8 @@ public class GameManager : MonoBehaviour
             if (sliderTiemr2 <= 0)
             {
                 StopTimer2 = true; //Timer is over
-
+                dailyRoverEnergy += 1;
+                roversEnergyCost.text = dailyRoverEnergy.ToString();
             }
             if (StopTimer2 == false)
             {
@@ -342,7 +397,8 @@ public class GameManager : MonoBehaviour
             if (sliderTiemr3 <= 0)
             {
                 StopTimer3 = true; //Timer is over
-
+                dailyRoverEnergy += 1;
+                roversEnergyCost.text = dailyRoverEnergy.ToString();
             }
             if (StopTimer3 == false)
             {
@@ -361,7 +417,8 @@ public class GameManager : MonoBehaviour
             if (sliderTiemr4 <= 0)
             {
                 StopTimer4 = true; //Timer is over
-
+                dailyRoverEnergy += 1;
+                roversEnergyCost.text = dailyRoverEnergy.ToString();
             }
             if (StopTimer4 == false)
             {
@@ -379,7 +436,8 @@ public class GameManager : MonoBehaviour
             if (sliderTiemr5 <= 0)
             {
                 StopTimer5 = true; //Timer is over
-
+                dailyRoverEnergy += 1;
+                roversEnergyCost.text = dailyRoverEnergy.ToString();
             }
             if (StopTimer5 == false)
             {
@@ -394,10 +452,49 @@ public class GameManager : MonoBehaviour
         AddPeople(2);
         rovers += 1;
         updateRoverUI(rovers);
-
+        
 
     }
 
+    IEnumerator buttonActive1()
+    {
+        yield return new WaitForSeconds(2);                                     // BOTONES DE ROVE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        roverButton1.SetActive(true);
+        roverButton2.SetActive(false);
+    }
+
+    IEnumerator buttonActive2()
+    {
+        yield return new WaitForSeconds(2);                                     // BOTONES DE ROVE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        roverButton2.SetActive(true);
+        roverButton3.SetActive(false);
+    }
+
+    IEnumerator buttonActive3()
+    {
+        yield return new WaitForSeconds(2);                                     // BOTONES DE ROVE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        roverButton3.SetActive(true);
+        roverButton4.SetActive(false);
+    }
+
+    IEnumerator buttonActive4()
+    {
+        yield return new WaitForSeconds(2);                                     // BOTONES DE ROVE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        roverButton4.SetActive(true);
+        roverButton5.SetActive(false);
+    }
+    IEnumerator buttonActive5()
+    {
+        yield return new WaitForSeconds(2);                                     // BOTONES DE ROVE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        roverButton5.SetActive(true);
+        roverButton6.SetActive(false);
+    }
+
+    IEnumerator dailyRoverEnergyExpenditure()
+    {
+        yield return new WaitForSeconds(42);
+        ExpendEnergy(dailyRoverEnergy);
+    }
 
     #endregion
     //TERMINA ROVERS
@@ -414,7 +511,7 @@ public class GameManager : MonoBehaviour
     IEnumerator ConsumeFood()
     {
         yield return new WaitForSeconds(42);
-        food -= 20;
+        food -= dailyFoodConsumption;
         moon -= 1;
         updateMoonUI();
         updateFoodUI(food, maxFood);
@@ -424,21 +521,65 @@ public class GameManager : MonoBehaviour
 
     }
 
+    
+
+    public void IncreaseFoodCons()
+    {
+        dailyFoodConsumption = 40;
+        dailyFoodConsumption_Text.text = dailyFoodConsumption.ToString();
+    }
+
+    public void IncreaseFoodCons2()
+    {
+        dailyFoodConsumption = 60;
+        dailyFoodConsumption_Text.text = dailyFoodConsumption.ToString();
+    }
+    public void incresBuildingNumberCount(int amount)
+    {
+        BuildingCount += amount;
+        buildingCount_Text.text = BuildingCount.ToString();
+    }
     public void ExpendEnergy(int amount)
     {
         energy -= amount;
         updateEnergyUI(energy, maxEnergy);
     }
     
+    public void dailyEnergyNumber(int amount) //Numero de gasto de energia diario
+    {
+        dailyenergyExpenditure += amount;
+        energyExpenditure_Text.text = dailyenergyExpenditure.ToString();
+        dailyEnergyExpenditure_Sldier.maxValue = maxEnergy;
+        dailyEnergyExpenditure_Sldier.value = dailyenergyExpenditure;
+
+    }
+
+    public void TtoaldailyEnergyProducction(int amount)  //Numero de produccion de energia diaria
+    {
+        dailyEnergyProduction += amount;
+        dailyEnergyProducction_Text.text = dailyEnergyProduction.ToString();
+        dailyEnergyProdduction_Slider.maxValue = maxEnergy;
+        dailyEnergyProdduction_Slider.value = dailyEnergyProduction;
+    }
+
+    public void TotalDailyFoodProdduction(int amount)
+    {
+        dailyFoodProdduction += amount;
+        dailyFoodProducction_Text.text = dailyFoodProdduction.ToString();
+        dailyFoodProducction_Slider.value = dailyFoodProdduction;
+    }
 
     public void notEnoughResourcesApagado()  // DESACTIVA EL POP UP DE RECURSOS
     {
         NotEnoughResourcesPopUp.SetActive(false);
     }
 
+
+
     //TIMER DE NAVE CON RECURSOS
     public void Update()
     {
+       
         currentTime = currentTime -= Time.deltaTime;
 
         if (currentTime <= timerLimit)
@@ -451,22 +592,13 @@ public class GameManager : MonoBehaviour
 
         }
         SetTimerText();
-        if (maxPeople >= 100 && food >= 100 && energy >= 100)
+        if (maxPeople >= 100 && food >= 200 && energy >= 200)
         {
             vitoryPanel.SetActive(true);
         }
         if (food <= 0)
         {
             defeatPanel.SetActive(false);
-        }
-        if (resourcesHaveDroped == true && food <= 0)
-        {
-            defeatPanel.SetActive(true);
-        }
-
-        if (food <= -1)
-        {
-            defeatPanel.SetActive(true);
         }
 
     }
@@ -482,7 +614,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(12);
         AddPeople(20);
         AddFood(80);
-        resourcesHaveDroped = true;
         StartCoroutine(ConsumeFood());
     }
 

@@ -221,14 +221,14 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
             return;
         }
 
-        if (GameManager.people >=7 && GameManager.energy >= 10)
+        if (GameManager.people >=10 && GameManager.energy >= 7)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(Laboratorio);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-            GameManager.Instance.ExpendPeople(7);
-            GameManager.Instance.ExpendEnergy(10);
+            GameManager.Instance.ExpendPeople(10);
+            GameManager.Instance.ExpendEnergy(7);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }
@@ -248,14 +248,14 @@ public class PlacementSystem : MonoBehaviour         // SISTEMA PARA INSTANCEAR 
         {
             return;
         }
-        if (GameManager.people >= 7 && GameManager.energy >=5)
+        if (GameManager.people >= 10 && GameManager.energy >=7)
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
             GameObject newDormitorios = Instantiate(Taller);
             newDormitorios.transform.position = grid.CellToWorld(gridPosition);
-            GameManager.Instance.ExpendPeople(7);
-            GameManager.Instance.ExpendEnergy(5);
+            GameManager.Instance.ExpendPeople(10);
+            GameManager.Instance.ExpendEnergy(7);
 
             // >>>>>>>>>>>AQUI CODIGO DE SFX<<<<<<<<<<<<<<<<<<
         }

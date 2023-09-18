@@ -21,6 +21,8 @@ public class Hospital : MonoBehaviour
 
         numeroDePacientes = 0;
         numeroDePacientesUI.text = numeroDePacientes.ToString();
+
+        
     }
    
     
@@ -40,7 +42,7 @@ public class Hospital : MonoBehaviour
             StartCoroutine(CountdownParaCheckeo());
             numeroDePacientes = 3;
             updatePacientUI();
-
+            GameManager.Instance.dailyEnergyNumber(6);
             healingVFX.SetActive(true);
         }
         else 
@@ -55,7 +57,7 @@ public class Hospital : MonoBehaviour
         GameManager.Instance.AddPeople(3);
         numeroDePacientes = 0;
         updatePacientUI();
-
+        GameManager.Instance.dailyEnergyNumber(0);
         healingVFX.SetActive(false);
     }
 
@@ -63,4 +65,6 @@ public class Hospital : MonoBehaviour
     {
         numeroDePacientesUI.text = numeroDePacientes.ToString();
     }
+
+    
 }

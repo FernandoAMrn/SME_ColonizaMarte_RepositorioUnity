@@ -74,6 +74,8 @@ public class EstacionDeEnergia : MonoBehaviour
                 energyVFX.SetActive(true);
                 StartCoroutine(energyGen());
                 GameManager.Instance.AddPeople(5);
+                GameManager.Instance.incresBuildingNumberCount(1);
+                GameManager.Instance.TtoaldailyEnergyProducction(4);
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
 

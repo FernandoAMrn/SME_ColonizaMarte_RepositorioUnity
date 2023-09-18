@@ -30,12 +30,7 @@ public class Invernadero : MonoBehaviour
     public int foodAmount;
     public TextMeshProUGUI foodAmountText;
 
-    public static Invernadero Instance;
-
-    public void Awake()
-    {
-        Instance = this;
-    }
+    
 
     private void Start()
     {
@@ -67,7 +62,11 @@ public class Invernadero : MonoBehaviour
                 panelDeComida.SetActive(true);
                 FoodVFX.SetActive(true);
                 StartCoroutine(GenInvernadero());
+                StartCoroutine(dailyEnergyExpenditure());
+                GameManager.Instance.dailyEnergyNumber(4);// Info de Consumo diario de energia
                 GameManager.Instance.AddPeople(4);
+                GameManager.Instance.incresBuildingNumberCount(1);
+                GameManager.Instance.TotalDailyFoodProdduction(foodAmount);
 
                 //  TO DO: Regresar cantidad de rovers cuando se acabe el tiempo pero a traves del placement system
 
@@ -87,16 +86,11 @@ public class Invernadero : MonoBehaviour
         GameManager.Instance.AddFood(foodAmount); // CANTIDAD DE COMIDA PRODUCCIDA
         StartCoroutine(GenInvernadero());
     }
-
-    public void updateFoodUI()
+    IEnumerator dailyEnergyExpenditure()
     {
-        foodAmountText.text = foodAmount.ToString();
-    }
-    public void increaseFoodAmount()
-    {
-        foodAmount *= 2;
-        updateFoodUI();
+        yield return new WaitForSeconds(42);
+        GameManager.Instance.ExpendEnergy(3);
+        StartCoroutine(dailyEnergyExpenditure());
     }
 
-    
 }

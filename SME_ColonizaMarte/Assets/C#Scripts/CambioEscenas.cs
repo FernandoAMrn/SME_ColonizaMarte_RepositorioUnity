@@ -38,4 +38,10 @@ public class CambioEscenas : MonoBehaviour
 		Application.Quit();
 #endif
     }
+
+    public void EndMatch()
+    {
+        SceneManager.LoadScene(0);
+        SceneManager.UnloadSceneAsync(1);
+    }
 }
