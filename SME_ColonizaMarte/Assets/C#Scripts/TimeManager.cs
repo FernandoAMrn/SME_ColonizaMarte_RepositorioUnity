@@ -39,6 +39,8 @@ public class TimeManager : MonoBehaviour
     public GameObject VictoryPanel;
     public GameObject DefeatPanel;
 
+    public GameObject lowFood;
+    public GameObject lowEnergy;
     
 
     
@@ -123,6 +125,23 @@ public class TimeManager : MonoBehaviour
         if (GameManager.Instance.BuildingCount >= 30)
         {
             GameManager.Instance.IncreaseFoodCons2();
+        }
+
+        if (GameManager.energy <= 20)
+        {
+            lowEnergy.SetActive(true);
+        }
+        else
+        {
+            lowEnergy.SetActive(false);
+        }
+        if (GameManager.food <= 30)
+        {
+            lowFood.SetActive(true);
+        }
+        else
+        {
+            lowFood.SetActive(false);
         }
 
     }

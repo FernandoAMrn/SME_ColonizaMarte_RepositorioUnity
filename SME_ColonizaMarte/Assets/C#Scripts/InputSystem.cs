@@ -39,20 +39,20 @@ public class InputSystem : MonoBehaviour       // MOVIMIENTO DE LA CAMARA
         HandleMouseInput();
         CameraMovementInput();
 
-        newPosition.x = Mathf.Clamp(newPosition.x, -10f, 10f);
-        newPosition.z = Mathf.Clamp(newPosition.z, -7f, 7f);
+        newPosition.x = Mathf.Clamp(newPosition.x, -10f, 8f);
+        newPosition.z = Mathf.Clamp(newPosition.z, -6f, 6f);
 
-        newZoom.y = Mathf.Clamp(newZoom.y, 4f, 11f);
+        
 
     }
 
     void HandleMouseInput()
     {
 
-        if (Input.mouseScrollDelta.y != 0)
-        {
-            newZoom += Input.mouseScrollDelta.y * zoomAmount;
-        }
+        //if (Input.mouseScrollDelta.y != 0)
+        //{
+        //    newZoom += Input.mouseScrollDelta.y * zoomAmount;
+        //}
         if (Input.GetMouseButtonDown(0))
         {
             Plane plane = new Plane(Vector3.up, Vector3.zero);
@@ -115,14 +115,14 @@ public class InputSystem : MonoBehaviour       // MOVIMIENTO DE LA CAMARA
         transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * cameraMovementTime);
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * cameraMovementTime);
         //Zoom de la camara
-        if (Input.GetKey(KeyCode.R))
-        {
-            newZoom += zoomAmount;
-        }
-        if (Input.GetKey(KeyCode.F))
-        {
-            newZoom -= zoomAmount;
-        }
+        //if (Input.GetKey(KeyCode.R))
+        //{
+        //    newZoom += zoomAmount;
+        //}
+        //if (Input.GetKey(KeyCode.F))
+        //{
+        //    newZoom -= zoomAmount;
+        //}
         
     }
     #endregion
